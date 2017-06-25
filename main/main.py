@@ -121,11 +121,12 @@ def areasdef(areasamount,syslvl,intro = 0):
 def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     clear(100)
     print("""
-             __
-            / _\\ ___ __ _ _ __     ___ ___
-            \\ \\ / __/ _` | '_ \   / __/ _ \\
-            _\\ \\ (_| (_| | | | | |  (_|(_) |
-            \\__/\\___\\__,_|_| |_|  \\___\\___(_)
+           _____                        ____  _  _  __
+          / ____|                      |___ \\| || |/_ |
+         | (___   ___ __ _ _ __   __   ____) | || |_| |
+          \\___ \\ / __/ _` | '_ \\  \\ \\ / /__ <|__   _| |
+          ____) | (_| (_| | | | |  \\ V /___) |  | | | |
+         |_____/ \\___\\__,_|_| |_|   \\_/|____(_) |_| |_|
 
 
     """)
@@ -137,7 +138,7 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
     print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner")
     choice = input(": ")
-    if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1."):
+    if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1k."):
         print("Which object would you like to scan in detail? (full name or value)")
         choice = input(": ")
         #stuff here
