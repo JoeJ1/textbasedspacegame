@@ -53,17 +53,17 @@ def areasdef(areasamount,syslvl,intro = 0):
                 a = random.randint(1,25) + 64
                 b = random.randint(1,25) + 64
                 c = random.randint(1,25) + 64
-                areaname = "\n",str(n),". UNKNOWN-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
+                areaname = str(n),". UNKNOWN-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
                 areaname = ''.join(areaname)
                 a1 = areaname
                 b1 = "UNK"
-                print(areaname)
+                print(areaname,"\t//")
             elif(areatype ==2 or areatype ==  3 or areatype == 4 or areatype == 5):
                 n = n+1
                 a = random.randint(1,25) + 64
                 b = random.randint(1,25) + 64
                 c = random.randint(1,25) + 64
-                areaname = "\n",str(n),". NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
+                areaname = str(n),". NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
                 areaname = ''.join(areaname)
                 if(a2 == ""):
                     b2 = "NEU"
@@ -77,13 +77,13 @@ def areasdef(areasamount,syslvl,intro = 0):
                 elif(a5 == ""):
                     a5 = areaname
                     b5 = "NEU"
-                print(areaname)
+                print(areaname,"\t//")
             elif(areatype == 6 or areatype == 7):
                 n = n+1
                 a = random.randint(1,25) + 64
                 b = random.randint(1,25) + 64
                 c = random.randint(1,25) + 64
-                areaname = "\n",str(n),". FRIENDLY-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
+                areaname = str(n),". FRIENDLY-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
                 areaname = ''.join(areaname)
                 if(a6 == ""):
                     b6 = "FRE"
@@ -91,13 +91,13 @@ def areasdef(areasamount,syslvl,intro = 0):
                 if(a7 == ""):
                     b7 = "FRE"
                     b6 = areaname
-                print(areaname)
+                print(areaname,"\t//")
             elif(areatype == 8 or areatype == 9):
                 n = n+1
                 a = random.randint(1,25) + 64
                 b = random.randint(1,25) + 64
                 c = random.randint(1,25) + 64
-                areaname = "\n",str(n),". HOSTILE-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
+                areaname = str(n),". HOSTILE-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
                 areaname = ''.join(areaname)
                 if(a8 == ""):
                     b8 = "HOS"
@@ -105,23 +105,24 @@ def areasdef(areasamount,syslvl,intro = 0):
                 elif(a9 == ""):
                     b9 = "HOS"
                     a9 = areaname
-                print(areaname)
+                print(areaname,"\t//")
             else:
                 n = n+1
                 a = random.randint(1,25) + 64
                 b = random.randint(1,25) + 64
                 c = random.randint(1,25) + 64
-                areaname = "\n",str(n),". STATION-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
+                areaname = str(n),". STATION-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
                 areaname = ''.join(areaname)
                 b10 = "STA"
                 a10 = areaname
-                print(areaname)
+                print(areaname,"\t//")
 
 def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
+    clear(100)
     areasamount = random.randint(1,(scansize*syslvl))
-    print("//////////////////////")
+    print("//////////////////////////")
     areas = areasdef(areasamount,syslvl,intro)
-    print("//////////////////////")
+    print("//////////////////////////")
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
 def intro():
     print("You are a ruthless mercenary, a soldier for hire (space pirate).\nYour mission: to reach the centre of the galaxy and discover what lies there.\nBut for now, think a little smaller, outside your window in the distance you see a small ship, some quick scans tell you there might be weapons aboard.\nBoard it kill any hostiles and leave with the weapons")
