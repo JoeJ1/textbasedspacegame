@@ -30,7 +30,7 @@ def areasdef(areasamount,syslvl,intro = 0):
         a = random.randint(1,25) + 64
         b = random.randint(1,25) + 64
         c = random.randint(1,25) + 64
-        areaname = "\n1. NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
+        areaname = "1. NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))
         areaname = ''.join(areaname)
         if(a2 == ""):
             b2 = "NEU"
@@ -136,10 +136,18 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     print("\t\t|_______________________|")
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
 def intro():
+    clear(100)
     print("You are a ruthless mercenary, a soldier for hire (space pirate).\nYour mission: to reach the centre of the galaxy and discover what lies there.\nBut for now, think a little smaller, outside your window in the distance you see a small ship, some quick scans tell you there might be weapons aboard.\nBoard it kill any hostiles and leave with the weapons")
     input("Press enter to continue")
     clear(100)
-    scan(1,10)
+    print("Type \"scan\" or \"s\" to scan for nearby objects in space")
+    choice = input(": ")
+    if(choice == "scan" or choice == "s" or choice == "Scan" or choice == "S" or choice == "SCAN"):
+        scan(1,1,1)
+    else:
+        print("please type \"scan\" or \"s\"")
+        time.sleep(1)
+        intro()
 
 print("Best viewed in fullscreen.")
 time.sleep(1)
