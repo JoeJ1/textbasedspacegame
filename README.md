@@ -1,2 +1,2 @@
 # textbasedspacegame
-python (other than that it's pretty self explanitory)
+python (currently all the program does is generate names of areas around the player)
