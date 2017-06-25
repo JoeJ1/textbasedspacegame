@@ -119,7 +119,9 @@ def areasdef(areasamount,syslvl,intro = 0):
 
 def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     areasamount = random.randint(1,(scansize*syslvl))
+    print("//////////////////////")
     areas = areasdef(areasamount,syslvl,intro)
+    print("//////////////////////")
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
 def intro():
     print("You are a ruthless mercenary, a soldier for hire (space pirate).\nYour mission: to reach the centre of the galaxy and discover what lies there.\nBut for now, think a little smaller, outside your window in the distance you see a small ship, some quick scans tell you there might be weapons aboard.\nBoard it kill any hostiles and leave with the weapons")
@@ -127,6 +129,8 @@ def intro():
     clear(100)
     scan(1,10)
 
-
+print("Best viewed in fullscreen.")
+time.sleep(1)
+clear(100)
 if(input("Do you wish to skip intro/tuorial? (y/n)") == "n"):
     intro()
