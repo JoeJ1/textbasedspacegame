@@ -20,13 +20,15 @@ b7 = 0
 b8 = 0
 b9 = 0
 b10 = 0
+areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
 
 
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
-    global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10
+    global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
     if(intro == 1): #checking whether or not the player is in the intro/tutorial (if so it always creates a neutral ship
+        n =0
         a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
         b = random.randint(1,25) + 64
         c = random.randint(1,25) + 64
@@ -35,15 +37,20 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
         if(a2 == ""): #checking to see whether or not to override the variables
             b2 = "NEU"
             a2 = areaname
+            areas[n] = str(a2)#adding to areas array with this area
         elif(a3 == ""):
             a3 = areaname
             b3 = "NEU"
+            areas[n] = str(a3)#adding to areas array with this area
         elif(a4 == ""):
             a4 = areaname
             b4 = "NEU"
+            areas[n] = str(a4)#adding to areas array with this area
         elif(a5 == ""):
             a5 = areaname
             b5 = "NEU"
+            areas[n] = str(a5)#adding to areas array with this area
+        print("\t\t| \/value  \/full name\t|")
         print("\t\t|",areaname,"\t|")
     elif(intro == 0):
         n =0
@@ -58,6 +65,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
                 a1 = areaname
                 b1 = "UNK"
+                areas[n] = a1
                 print("\t\t|",areaname,"\t|")
             elif(areatype ==2 or areatype ==  3 or areatype == 4 or areatype == 5): #Making it a 40% chance to see a neutral ship
                 n = n+1 # n defines what number to apply to each area
@@ -119,6 +127,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 print("\t\t|",areaname,"\t|")
 
 def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
+    global n, areas
     clear(100) #100 lines of nothing
     print("""
            _____                        ____  _  _  __
@@ -127,8 +136,6 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
           \\___ \\ / __/ _` | '_ \\  \\ \\ / /__ <|__   _| |
           ____) | (_| (_| | | | |  \\ V /___) |  | | | |
          |_____/ \\___\\__,_|_| |_|   \\_/|____(_) |_| |_|
-
-
     """)
     time.sleep(0.5)
     areasamount = random.randint(1,(scansize*syslvl))
@@ -136,12 +143,19 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     areasdef(areasamount,syslvl,intro)
     print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
-    print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner") #giving choices 
+    print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner") #giving choices
     choice = input(": ") # taking input from player
     if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1k."): #processing input
         print("Which object would you like to scan in detail? (full name or value)")
         choice = input(": ")
-        #stuff here
+        if(choice.isdigid and choice<n):
+            print("choice correct") #for debugging purposes
+            #stuff here
+        elif(str(choice) in areas):
+            print("choice correct") #for debugging purposes
+        else:
+            print("that wasn\'t one of the options")
+            #stuff here
     elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
         print("Which object would you like to fly to? (full name or value)")
         choice = input(": ")
