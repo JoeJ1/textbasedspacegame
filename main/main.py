@@ -135,6 +135,16 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     areas = areasdef(areasamount,syslvl,intro)
     print("\t\t|_______________________|")
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
+    print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner")
+    choice = input(": ")
+    if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1."):
+        print("Which object would you like to scan in detail? (full name or value)")
+        choice = input(": ")
+        #stuff here
+    elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
+        print("Which object would you like to fly to? (full name or value)")
+        choice = input(": ")
+        #stuff here
 def intro():
     clear(100)
     print("You are a ruthless mercenary, a soldier for hire (space pirate).\nYour mission: to reach the centre of the galaxy and discover what lies there.\nBut for now, think a little smaller, outside your window in the distance you see a small ship, some quick scans tell you there might be weapons aboard.\nBoard it kill any hostiles and leave with the weapons")
