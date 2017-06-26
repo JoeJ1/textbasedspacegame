@@ -42,7 +42,7 @@ def console(logo):
     """)
     time.sleep(0.5)
     print("Type \"help\" to view help or \"cmds\" to view commands.")
-    shellprompt = "[name@shipname]$ "
+    shellprompt = "[name@shipname ~]$ "
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
         scan.scan()
@@ -59,7 +59,7 @@ def console(logo):
         print("marauderer: scans ships for loot, weapons and enemies.") #more commands here when implimented
     elif(choice == "su"):
         clear(5)
-        shellprompt = "[name@shipname]# "
+        shellprompt = "[name@shipname ~]# "
     else:
         clear(5)
         print("asish:",choice,": command not found")
