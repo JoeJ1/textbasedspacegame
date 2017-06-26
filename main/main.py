@@ -21,6 +21,7 @@ b8 = 0
 b9 = 0
 b10 = 0
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
+scanned = 0
 
 def console():
     clear(100)
@@ -94,9 +95,11 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 if(a2 == ""): #checking to see whether or not to override the variables
                     b2 = "NEU"
                     a2 = areaname
+                    areas[n] = a1
                 elif(a3 == ""):
                     a3 = areaname
                     b3 = "NEU"
+                    areas[n] = a1
                 elif(a4 == ""):
                     a4 = areaname
                     b4 = "NEU"
@@ -144,7 +147,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 print("\t\t|",areaname,"\t|")
 
 def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
-    global n, areas
+    global n, areas, scanned
     clear(100) #100 lines of nothing
     print("""
            _____                        ____  _  _  __
@@ -157,7 +160,15 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     time.sleep(0.5)
     areasamount = random.randint(1,(scansize*syslvl))
     print("\t\t _______________________") #the box around the objects displayed in the scanner
-    areasdef(areasamount,syslvl,intro)
+    if(scanned == 0): 
+        areasdef(areasamount,syslvl,intro)
+        scanned = 1
+    else:
+        i = 0
+        while(i<n):
+            print(areas[i])
+            i= i+1
+
     print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
     print("\nType \"h\" to show help.")
@@ -179,7 +190,7 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
         #stuff here
     elif(choice == "h"):
         print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner")
-        
+        scan(syslvl,scansize,intro)
         
 def intro():
     clear(100)
@@ -189,7 +200,8 @@ def intro():
     print("Type \"scan\" or \"s\" to scan for nearby objects in space") #telling the player how to use the scanner
     choice = input(": ") #taking player's input
     if(choice == "scan" or choice == "s" or choice == "Scan" or choice == "S" or choice == "SCAN"): #processing input
-        scan(1,1,1)#(a,b,c) a=system level, b = scan size, c = whether or not the player is in the tutorial mission (1/0,t/f)
+        scan(1,10)#(a,b,c) a=system level, b = scan size, c = whether or not the player is in the tutorial mission (1/0,t/f)
+        scanned = 1
     else:
         print("please type \"scan\" or \"s\"") #if the player doesn't type scan or s then prompt again
         time.sleep(1)
