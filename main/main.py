@@ -76,7 +76,7 @@ def marauderer(syslvl,scanned,intro = 0):
         print("Must scan for ships before running.")
     else:
         print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
-        print("\t\t _______________________________")
+        print("\t\t _______________________")
         while(a<=n):
             current = str(areas[a])
             if(current[:7] == "NEUTRAL" or current[:7] == "CORDIAL" or current[:7] == "HOSTILE"):
@@ -86,6 +86,7 @@ def marauderer(syslvl,scanned,intro = 0):
         if(intro == 1):
             clear(1)
             print("type the name of the ship")
+        print("\t\t|_______________________|")
         choice = input(": ")
         if(str(choice) in ships):
             print("Worked!")
