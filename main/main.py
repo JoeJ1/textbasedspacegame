@@ -25,10 +25,11 @@ b10 = 0
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 scanned = 0
 
-def console():
-    clear(100)
-    print("""
-                  _____  _____    _____  _    _    __      _____  _  _   ___
+def console(logo):
+    if(logo == 1):
+        clear(100)
+        print("""
+                    _____  _____    _____  _    _    __      _____  _  _   ___
          /\\      / ____||_   _|  / ____|| |  | |   \\ \\    / /__ \\| || | / _ \\
         /  \\    | (___    | |   | (___  | |__| |    \\ \\  / /   ) | || || (_) |
        / /\\ \\    \\___ \\   | |    \\___ \\ |  __  |     \\ \\/ /   / /|__   _\__, |
@@ -41,25 +42,28 @@ def console():
     """)
     time.sleep(0.5)
     print("Type \"help\" to view help or \"cmds\" to view commands.")
-    shellprompt = "[name@shipname]$"
+    shellprompt = "[name@shipname]$ "
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
         scan.scan()
     elif(choice.lower() == "help"):
+        clear(5)
         print("Format:") #used seperate prints to make it easier to read when editing (can easily be changed in the future)
         print("command_name -alternate_option (what to type) : description (what it does)")
-        clear(2)
     elif(choice == "cmds"):
+        clear(5)
         print("Commands available:")
         clear(1)
         print("scan: scans the area around your ship.")
         clear(1)
         print("marauderer: scans ships for loot, weapons and enemies.") #more commands here when implimented
-    elif(choice = "su"):
-        shellprompt = "[name@shipname]#"
+    elif(choice == "su"):
+        clear(5)
+        shellprompt = "[name@shipname]# "
     else:
+        clear(5)
         print("asish:",choice,": command not found")
-    console()
+    console(0)
 
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
@@ -68,9 +72,7 @@ def clear(amount): #defining clear, a funcion which prints a certain amount of e
 print("Best viewed in fullscreen.")
 time.sleep(1)
 clear(100)
-name = input("What is your name, glory hunter? ")
-shipname = input("What dou you want to call your trusty vessel? ")
 if(input("Do you wish to skip intro/tuorial? (y/n)") == "n"): #deciding whether or not to call intro
     intro()#calling intro mission
 else:
-    console()
+    console(1)
