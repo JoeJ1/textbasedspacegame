@@ -1,5 +1,7 @@
 import time
 import random
+import scan.py as scan
+import marauder.py as marauder
 a1 = "" #A variables are the names of the ship that the player sees
 a2 = ""
 a3 = ""
@@ -55,6 +57,7 @@ def console():
         print("Marauderer/m: scans ships for loot, weapons and enemies. More accurate with upgrades") #more commands here when implimented
     else:
         print("asish:",choice,": command not found")
+        console()
 
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
