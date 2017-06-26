@@ -40,9 +40,9 @@ def console():
     time.sleep(0.5)
     print("type \"help\" or \"h\"")
     choice = input(": ")
-    if(choice.lower() == "scan" or choice.lower() == "s" ):
+    if(choice.lower() == "scan"):
         scan.scan()
-    if(choice.lower() == "h" or choice.lower() == "help"):
+    if(choice.lower() == "help"):
         print("All commands are written in lower case.")
         clear(2)
         print("Format:") #used seperate prints to make it easier to read when editing (can easily be changed in the future)
@@ -53,6 +53,8 @@ def console():
         print("scan/s: scans the area around your ship. Size of scan varies based on the system and how powerful your scanner is.")
         clear(1)
         print("Marauderer/m: scans ships for loot, weapons and enemies. More accurate with upgrades") #more commands here when implimented
+    else:
+        print("asish:",choice,": command not found")
 
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
