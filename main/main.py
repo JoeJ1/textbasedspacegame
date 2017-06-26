@@ -33,17 +33,70 @@ def console():
       / ____ \\ _ ____) | _| |_ _ ____) || |  | |_     \\  /   / /_ _ | |   / /
      /_/    \\_(_)_____(_)_____(_)_____(_)_|  |_(_)     \\/   |____(_)|_|  /_/
 
-     Advanced     Ship  Interactive    Shell           Version      2.49
+     Advanced     Ship  Interactive    Shell          Version      2.49
 
 
     """)
+    time.sleep(0.5)
+    print("type \"help\" or \"h\"")
     choice = input(": ")
-    if(choice == "scan"):
+    if(choice.lower() == "scan" or choice.lower() == "s" ):
         scan()
+    if(choice.lower() == "h" or choice.lower() == "help"):
+        print("All commands are written in lower case.")
+        clear(2)
+        print("Format:") #used seperate prints to make it easier to read when editing (can easily be changed in the future)
+        print("command name/alternate option (what to type) : description (what it does)")
+        clear(2)
+        print("Commands available:")
+        clear(1)
+        print("scan/s: scans the area around your ship. Size of scan varies based on the system and how powerful your scanner is.")
+        clear(1)
+        print("Marauderer/m: scans ships for loot, weapons and enemies. More accurate with upgrades") #more commands here when implimented
 
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
+
+def marauderer(syslvl,scanned,intro = 0):
+    global areas
+    clear(100)
+    current = ""
+    ships = ["","","","","","","","","","","","","","","","","","",""]
+    a = 1
+    print("""
+               __  ___                           __                           ___    ____
+              /  |/  /___ _ ____ ___ _ __ __ ___/ /___  ____ ___  ____  _  __<  /   |_  /
+             / /|_/ // _ `// __// _ `// // // _  // -_)/ __// -_)/ __/ | |/ // /_  _/_ <
+            /_/  /_/ \\_,_//_/   \\_,_/ \\_,_/ \\_,_/ \\__//_/   \\__//_/    |___//_/(_)/____/
+
+
+    """)
+    if(scanned == 0):
+        print("Must scan for ships before running.")
+    else:
+        print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
+        print("\t\t _______________________________")
+        while(a<=n):
+            current = str(areas[a])
+            if(current[:7] == "NEUTRAL" or current[:7] == "CORDIAL" or current[:7] == "HOSTILE"):
+                ships[a] = areas[a]
+                print("\t\t| ",a,str(ships[a]),"\t|")
+            a = a +1
+        if(intro == 1):
+            clear(1)
+            print("type the name of the ship")
+        choice = input(": ")
+        if(str(choice) in ships):
+            print("Worked!")
+            #stuff here
+        elif(choice.isdigit()):
+            if(int(choice) < a):
+                print("Worked!")
+                print(str(ships[int(choice)]))
+                #stuff here
+
+
 
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
     global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
@@ -173,32 +226,24 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     if(choice == "h" or choice == "help" or choice == "H" or choice == "Help" or choice == "HELP"):
         print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner")
         choice = input(":")
-        if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1k."): #processing input
-            print("Which object would you like to scan in detail? (full name or value)")
+        if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
+            print("this will exit scan and take you to marauderer. confirm (y =leave/n = stay)")
             choice = input(": ")
-            if(choice.isdigit() and int(choice)<n):
-                print("choice correct") #for debugging purposes
-                #stuff here
-            elif(str(choice) in areas):
-                print("choice correct") #for debugging purposes
+            if(choice == "y"):
+                marauderer(syslvl,scanned,intro)
             else:
-                print("that wasn\'t one of the options")
                 scan(syslvl,scansize,intro)
                 #stuff here
         elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
             print("Which object would you like to fly to? (full name or value)")
             choice = input(": ")
             #stuff here
-    if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1k."): #processing input
-        print("Which object would you like to scan in detail? (full name or value)")
+    if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
+        print("this will exit scan and take you to marauderer. confirm (y =leave/n = stay)")
         choice = input(": ")
-        if(choice.isdigit() and int(choice)<n):
-            print("choice correct") #for debugging purposes
-            #stuff here
-        elif(str(choice) in areas):
-            print("choice correct") #for debugging purposes
+        if(choice == "y"):
+            marauderer(syslvl,scanned,intro)
         else:
-            print("that wasn\'t one of the options")
             scan(syslvl,scansize,intro)
             #stuff here
     elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
@@ -220,7 +265,7 @@ def intro():
         print("please type \"scan\" or \"s\"") #if the player doesn't type scan or s then prompt again
         time.sleep(1)
         intro()
-
+console() #for testing the console
 print("Best viewed in fullscreen.")
 time.sleep(1)
 clear(100)
