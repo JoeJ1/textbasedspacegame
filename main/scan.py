@@ -52,3 +52,5 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
         print("Which object would you like to fly to? (full name or value)")
         choice = input(": ")
         #stuff here
+        
+def intro():
