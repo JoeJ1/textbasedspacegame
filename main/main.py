@@ -103,15 +103,15 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
                 b = random.randint(1,25) + 64
                 c = random.randint(1,25) + 64
-                areaname = "FRIENDLY-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
+                areaname = "CORDIAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
                 if(a6 == ""): #checking to see whether or not to override the variables
                     b6 = "FRE"
                     a6 = areaname
                     areas[n] = a6
-                if(a7 == ""):
+                elif(a7 == ""):
                     b7 = "FRE"
-                    b6 = areaname
+                    a7 = areaname
                     areas[n] = a7
                 print("\t\t| ",n,". ",areaname,"\t|")
             elif(areatype == 8 or areatype == 9): #20% chance of creating a hostile ship
@@ -119,7 +119,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
                 b = random.randint(1,25) + 64
                 c = random.randint(1,25) + 64
-                areaname = "HOSTILE-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
+                areaname = "HOSTILE-",chr(a),chr(b),chr(c),"-",str(random.randint(10,99)) #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
                 if(a8 == ""): #checking to see whether or not to override the variables
                     b8 = "HOS"
@@ -141,7 +141,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 a10 = areaname
                 areas[n]=a10
                 print("\t\t| ",n,". ",areaname,"\t|")
-        print(areas)
+        #print(areas)
 
 def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
@@ -161,9 +161,9 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
         areasdef(areasamount,syslvl,intro)
         scanned = 1
     else:
-        i = 0
-        while(i<n):
-            print(str(areas[i]))
+        i = 1
+        while(i<=n):
+            print("\t\t| ",i,". ",str(areas[i]),"\t|")
             i= i+1
 
     print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
@@ -176,29 +176,30 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
         if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1k."): #processing input
             print("Which object would you like to scan in detail? (full name or value)")
             choice = input(": ")
-            if(choice.isdigit() and choice<n):
+            if(choice.isdigit() and int(choice)<n):
                 print("choice correct") #for debugging purposes
                 #stuff here
             elif(str(choice) in areas):
                 print("choice correct") #for debugging purposes
             else:
                 print("that wasn\'t one of the options")
+                scan(syslvl,scansize,intro)
                 #stuff here
         elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
             print("Which object would you like to fly to? (full name or value)")
             choice = input(": ")
             #stuff here
-        scan(syslvl,scansize,intro)
     if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1k."): #processing input
         print("Which object would you like to scan in detail? (full name or value)")
         choice = input(": ")
-        if(choice.isdigit() and choice<n):
+        if(choice.isdigit() and int(choice)<n):
             print("choice correct") #for debugging purposes
             #stuff here
         elif(str(choice) in areas):
             print("choice correct") #for debugging purposes
         else:
             print("that wasn\'t one of the options")
+            scan(syslvl,scansize,intro)
             #stuff here
     elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
         print("Which object would you like to fly to? (full name or value)")
