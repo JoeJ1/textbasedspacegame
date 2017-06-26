@@ -266,7 +266,7 @@ def intro():
         print("please type \"scan\" or \"s\"") #if the player doesn't type scan or s then prompt again
         time.sleep(1)
         intro()
-console() #for testing the console
+
 print("Best viewed in fullscreen.")
 time.sleep(1)
 clear(100)
