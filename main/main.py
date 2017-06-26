@@ -21,9 +21,9 @@ b8 = 0
 b9 = 0
 b10 = 0
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
+
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
-
 
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
     global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
@@ -143,12 +143,12 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     areasdef(areasamount,syslvl,intro)
     print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
     #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
-    print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner") #giving choices
+    print("\nType \"h\" to show help.")
     choice = input(": ") # taking input from player
     if(choice == "scan" or choice == "1" or choice == "one" or choice == "One" or choice == "Scan" or choice == "SCAN" or choice == "s" or choice == "S" or choice == "1k."): #processing input
         print("Which object would you like to scan in detail? (full name or value)")
         choice = input(": ")
-        if(choice.isdigid and choice<n):
+        if(choice.isdigit() and choice<n):
             print("choice correct") #for debugging purposes
             #stuff here
         elif(str(choice) in areas):
@@ -160,10 +160,14 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
         print("Which object would you like to fly to? (full name or value)")
         choice = input(": ")
         #stuff here
+    elif(choice == "h"):
+        print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner")
+        
+        
 def intro():
     clear(100)
     print("You are a ruthless mercenary, a soldier for hire (space pirate).\nYour mission: to reach the centre of the galaxy and discover what lies there.\nBut for now, think a little smaller, outside your window in the distance you see a small ship, some quick scans tell you there might be weapons aboard.\nBoard it kill any hostiles and leave with the weapons") #flavour text
-    input("Press enter to continue") #so the player can choose when to move on
+    input("Press enter to continue... ") #so the player can choose when to move on
     clear(100) # clearing the screen
     print("Type \"scan\" or \"s\" to scan for nearby objects in space") #telling the player how to use the scanner
     choice = input(": ") #taking player's input
