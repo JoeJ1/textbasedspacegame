@@ -22,6 +22,23 @@ b9 = 0
 b10 = 0
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 
+def console():
+    clear(100)
+    print("""
+                  _____  _____    _____  _    _    __      _____  _  _   ___  
+         /\\      / ____||_   _|  / ____|| |  | |   \\ \\    / /__ \\| || | / _ \\ 
+        /  \\    | (___    | |   | (___  | |__| |    \\ \\  / /   ) | || || (_) |
+       / /\\ \\    \\___ \\   | |    \\___ \\ |  __  |     \\ \\/ /   / /|__   _\__, |
+      / ____ \\ _ ____) | _| |_ _ ____) || |  | |_     \\  /   / /_ _ | |   / / 
+     /_/    \\_(_)_____(_)_____(_)_____(_)_|  |_(_)     \\/   |____(_)|_|  /_/  
+                                                                          
+                                                                         
+    """)
+    choice = input(": ")
+    if(choice == "scan"):
+        scan()
+
+
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
 
