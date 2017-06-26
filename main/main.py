@@ -65,3 +65,5 @@ time.sleep(1)
 clear(100)
 if(input("Do you wish to skip intro/tuorial? (y/n)") == "n"): #deciding whether or not to call intro
     intro()#calling intro mission
+else:
+    console()
