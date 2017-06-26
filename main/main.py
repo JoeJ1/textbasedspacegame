@@ -40,21 +40,20 @@ def console():
 
     """)
     time.sleep(0.5)
-    print("type \"help\" or \"h\"")
+    print("Type \"help\" to view help or \"cmds\" to view commands.")
     choice = input(": ")
     if(choice.lower() == "scan"):
         scan.scan()
-    if(choice.lower() == "help"):
-        print("All commands are written in lower case.")
-        clear(2)
+    elif(choice.lower() == "help"):
         print("Format:") #used seperate prints to make it easier to read when editing (can easily be changed in the future)
-        print("command name/alternate option (what to type) : description (what it does)")
+        print("command_name -alternate_option (what to type) : description (what it does)")
         clear(2)
+    elif(choice == "cmds"):
         print("Commands available:")
         clear(1)
-        print("scan/s: scans the area around your ship. Size of scan varies based on the system and how powerful your scanner is.")
+        print("scan: scans the area around your ship.")
         clear(1)
-        print("Marauderer/m: scans ships for loot, weapons and enemies. More accurate with upgrades") #more commands here when implimented
+        print("marauderer: scans ships for loot, weapons and enemies.") #more commands here when implimented
     else:
         print("asish:",choice,": command not found")
         console()
