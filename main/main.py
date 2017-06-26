@@ -1,7 +1,7 @@
 import time
 import random
-import scan.py as scan
-import marauder.py as marauder
+import scan as scan
+import marauder as marauder
 a1 = "" #A variables are the names of the ship that the player sees
 a2 = ""
 a3 = ""
@@ -41,7 +41,7 @@ def console():
     """)
     time.sleep(0.5)
     print("Type \"help\" to view help or \"cmds\" to view commands.")
-    choice = input(": ")
+    choice = input("["name,"@",shipname,"~] $")
     if(choice.lower() == "scan"):
         scan.scan()
     elif(choice.lower() == "help"):
@@ -56,7 +56,7 @@ def console():
         print("marauderer: scans ships for loot, weapons and enemies.") #more commands here when implimented
     else:
         print("asish:",choice,": command not found")
-        console()
+    console()
 
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
@@ -65,6 +65,8 @@ def clear(amount): #defining clear, a funcion which prints a certain amount of e
 print("Best viewed in fullscreen.")
 time.sleep(1)
 clear(100)
+name = input("What is your name, glory hunter? ")
+shipname = input("What dou you want to call your trusty vessel? ")
 if(input("Do you wish to skip intro/tuorial? (y/n)") == "n"): #deciding whether or not to call intro
     intro()#calling intro mission
 else:
