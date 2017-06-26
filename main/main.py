@@ -41,7 +41,8 @@ def console():
     """)
     time.sleep(0.5)
     print("Type \"help\" to view help or \"cmds\" to view commands.")
-    choice = input("["name,"@",shipname,"~] $")
+    shellprompt = str("[",name,"@",shipname,"~] $")
+    choice = input(shellprompt)
     if(choice.lower() == "scan"):
         scan.scan()
     elif(choice.lower() == "help"):
