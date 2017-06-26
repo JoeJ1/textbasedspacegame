@@ -1,31 +1,9 @@
 import time
-import random
-import scan as scan
-import marauder as marauder
-a1 = "" #A variables are the names of the ship that the player sees
-a2 = ""
-a3 = ""
-a4 = ""
-a5 = ""
-a6 = ""
-a7 = ""
-a8 = ""
-a9 = ""
-a10 = ""
-b1 = 0 #b variables are used to define the type of ship, only used for calculations, never seen by player
-b2 = 0
-b3 = 0
-b4 = 0
-b5 = 0
-b6 = 0
-b7 = 0
-b8 = 0
-b9 = 0
-b10 = 0
-areas = ["","","","","","","","","","","","","",""] #defining the array of areas
-scanned = 0
+import scan
+import marauder
 
 def console(logo):
+    global shellprompt
     if(logo == 1):
         clear(100)
         print("""
@@ -40,28 +18,29 @@ def console(logo):
 
 
     """)
-    time.sleep(0.5)
-    print("Type \"help\" to view help or \"cmds\" to view commands.")
-    shellprompt = "[name@shipname ~]$ "
+        print("Type \"help\" to view help or \"cmds\" to view commands.")
+        time.sleep(0.5)
+        shellprompt = "[name@shipname ~]$ "
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
-        scan.scan()
+        scan.scan(1,1)
+    elif(choice == "marauder"):
+        marauder.marauder(1,1)
     elif(choice.lower() == "help"):
-        clear(5)
         print("Format:") #used seperate prints to make it easier to read when editing (can easily be changed in the future)
         print("command_name -alternate_option (what to type) : description (what it does)")
     elif(choice == "cmds"):
-        clear(5)
         print("Commands available:")
         clear(1)
         print("scan: scans the area around your ship.")
         clear(1)
         print("marauderer: scans ships for loot, weapons and enemies.") #more commands here when implimented
     elif(choice == "su"):
-        clear(5)
-        shellprompt = "[name@shipname ~]# "
+        choice = input("Password: ")
+        if(choice == "doggos"):
+            shellprompt = "[name@shipname ~]# "
+            su = 1
     else:
-        clear(5)
         print("asish:",choice,": command not found")
     console(0)
 

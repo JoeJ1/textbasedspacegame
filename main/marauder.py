@@ -1,4 +1,10 @@
-def marauderer(syslvl,scanned,intro = 0):
+import random
+import time
+
+def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
+    print("\n"*amount)
+
+def marauder(syslvl,scanned,intro = 0):
     global areas
     clear(100)
     current = ""

@@ -1,3 +1,33 @@
+import random
+import time
+import marauder
+
+a1 = "" #A variables are the names of the ship that the player sees
+a2 = ""
+a3 = ""
+a4 = ""
+a5 = ""
+a6 = ""
+a7 = ""
+a8 = ""
+a9 = ""
+a10 = ""
+b1 = 0 #b variables are used to define the type of ship, only used for calculations, never seen by player
+b2 = 0
+b3 = 0
+b4 = 0
+b5 = 0
+b6 = 0
+b7 = 0
+b8 = 0
+b9 = 0
+b10 = 0
+areas = ["","","","","","","","","","","","","",""] #defining the array of areas
+scanned = 0
+
+def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
+    print("\n"*amount)
+
 def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
     clear(100) #100 lines of nothing
@@ -40,19 +70,19 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
             print("Which object would you like to fly to? (full name or value)")
             choice = input(": ")
             #stuff here
-    if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
-        print("this will exit scan and take you to marauderer. confirm (y =leave/n = stay)")
-        choice = input(": ")
-        if(choice == "y"):
-            marauderer(syslvl,scanned,intro)
-        else:
-            scan(syslvl,scansize,intro)
-            #stuff here
-    elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
+#    if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
+#        print("this will exit scan and take you to marauder. confirm (y/n)")
+#        choice = input(": ")
+#        if(choice == "y"):
+#            marauder(syslvl,scanned,intro)
+#        else:
+#            scan(syslvl,scansize,intro)
+#could just tell them to go back to shell or make a variable for comm with marauder.
+    if(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
         print("Which object would you like to fly to? (full name or value)")
         choice = input(": ")
         #stuff here
-        
+
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
     global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
     if(intro == 1): #checking whether or not the player is in the intro/tutorial (if so it always creates a neutral ship
