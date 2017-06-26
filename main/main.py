@@ -33,7 +33,7 @@ def console():
       / ____ \\ _ ____) | _| |_ _ ____) || |  | |_     \\  /   / /_ _ | |   / /
      /_/    \\_(_)_____(_)_____(_)_____(_)_|  |_(_)     \\/   |____(_)|_|  /_/
 
-     Advanced     Ship  Interactive    Shell
+     Advanced     Ship  Interactive    Shell           Version      2.49
 
 
     """)
