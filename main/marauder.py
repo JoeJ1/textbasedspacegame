@@ -1,5 +1,7 @@
 import random
 import time
+import scan
+import main
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
