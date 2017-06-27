@@ -28,7 +28,7 @@ scanned = 0
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
 
-def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
+def scan(syslvl,scansize): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
     clear(100) #100 lines of nothing
     print("""
@@ -43,7 +43,7 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
     areasamount = random.randint(1,(scansize*syslvl))
     print("\t\t _______________________") #the box around the objects displayed in the scanner
     if(scanned == 0):
-        areasdef(areasamount,syslvl,intro)
+        areasdef(areasamount,syslvl)
         scanned = 1
     else:
         i = 1
@@ -62,9 +62,9 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
             print("this will exit scan and take you to marauderer. confirm (y =leave/n = stay)")
             choice = input(": ")
             if(choice == "y"):
-                marauderer(syslvl,scanned,intro)
+                marauderer(syslvl,scanned)
             else:
-                scan(syslvl,scansize,intro)
+                scan(syslvl,scansize)
                 #stuff here
         elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
             print("Which object would you like to fly to? (full name or value)")
@@ -74,9 +74,9 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
         print("this will exit scan and take you to marauder. confirm (y/n)")
         choice = input(": ")
         if(choice == "y"):
-            marauder.marauder(syslvl,scanned,intro)
+            marauder.marauder(syslvl,scanned)
         else:
-            scan(syslvl,scansize,intro)
+            scan(syslvl,scansize)
     elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
         print("Which object would you like to fly to? (full name or value)")
         choice = input(": ")
