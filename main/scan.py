@@ -31,7 +31,7 @@ def clear(amount): #defining clear, a funcion which prints a certain amount of e
 def scan(syslvl,scansize): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
     print("""
-          _____                        ____  _  _  __
+           _____                        ____  _  _  __
           / ____|                      |___ \\| || |/_ |
          | (___   ___ __ _ _ __   __   ____) | || |_| |
           \\___ \\ / __/ _` | '_ \\  \\ \\ / /__ <|__   _| |
