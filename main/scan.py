@@ -62,7 +62,7 @@ def scan(syslvl,scansize): #intro should be whether or not this is the scan in t
             print("this will exit scan and take you to marauderer. confirm (y =leave/n = stay)")
             choice = input("scan: ")
             if(choice == "y"):
-                marauderer(syslvl,scanned)
+                marauder.marauder(syslvl,scanned)
             else:
                 scan(syslvl,scansize)
                 #stuff here
