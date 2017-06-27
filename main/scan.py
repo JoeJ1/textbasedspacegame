@@ -70,17 +70,19 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
             print("Which object would you like to fly to? (full name or value)")
             choice = input(": ")
             #stuff here
-    if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
+    elif(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
         print("this will exit scan and take you to marauder. confirm (y/n)")
         choice = input(": ")
         if(choice == "y"):
             marauder.marauder(syslvl,scanned,intro)
         else:
             scan(syslvl,scansize,intro)
-    if(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
+    elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
         print("Which object would you like to fly to? (full name or value)")
         choice = input(": ")
         #stuff here
+	elif(choice == "exit"):
+		console(1)
 
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
     global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
