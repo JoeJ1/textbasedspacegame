@@ -21,7 +21,8 @@ def console(logo):
 #    """)
         print("Type \"help\" to view a list of commands")
         time.sleep(0.5)
-        shellprompt = "[name@shipname ~]$ "
+        shellprompt = "[",name,"@",shipname," ~]$ "
+        ''.join(shellprompt)
         su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
@@ -55,6 +56,8 @@ def clear(amount): #defining clear, a funcion which prints a certain amount of e
 print("Best viewed in fullscreen.")
 time.sleep(1)
 clear(100)
+name = input("What ur nam bro? ")
+shipname = input("What that ship nam bro?")
 if(input("Do you wish to skip intro/tuorial? (y/n)") == "n"): #deciding whether or not to call intro
     intro()#calling intro mission
 else:
