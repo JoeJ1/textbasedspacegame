@@ -1,7 +1,7 @@
 import time
 import scan
 import marauder
-
+scanned = 0
 def console(logo):
     global shellprompt
     if(logo == 1):
