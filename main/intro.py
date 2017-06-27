@@ -6,20 +6,19 @@ def clear(amount):
     print("\n"*amount)
 
 
-def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
+def areasdef(areasamount,syslvl): #areasdef defines the type of area in a system and its name
     global n
-    if(intro == 1): #checking whether or not the player is in the intro/tutorial (if so it always creates a neutral ship
-        n =0
-        a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
-        b = random.randint(1,25) + 64
-        c = random.randint(1,25) + 64
-        areaname = "NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
-        areaname = ''.join(areaname) #joining the list of values into one string (the name)
-        print("\t\t| \/value  \/full name\t|")
-        print("\t\t|",areaname,"\t|")
-        a1 = areaname
-        areas[n] = a1
-        b1 = "NEU"
+    n =1
+    a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
+    b = random.randint(1,25) + 64
+    c = random.randint(1,25) + 64
+    areaname = "NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
+    areaname = ''.join(areaname) #joining the list of values into one string (the name)
+    print("\t\t| \/value  \/full name\t|")
+    print("\t\t|",areaname,"\t|")
+    a1 = areaname
+    areas[n] = a1
+    b1 = "NEU"
 
 
 def marauder(syslvl,scanned):
@@ -41,6 +40,7 @@ def marauder(syslvl,scanned):
         scan(syslvl,scansize)
     else:
         print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
+        print("type the name of the ship or 1")
         print("\t\t _______________________")
         while(a<=n):
             current = str(areas[a])
@@ -48,9 +48,6 @@ def marauder(syslvl,scanned):
                 ships[a] = areas[a]
                 print("\t\t| ",a,str(ships[a]),"\t|")
             a = a +1
-        if(intro == 1):
-            clear(1)
-            print("type the name of the ship")
         print("\t\t|_______________________|")
         choice = input(": ")
         if(str(choice) in ships):
