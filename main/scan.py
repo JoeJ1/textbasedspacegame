@@ -30,60 +30,47 @@ def clear(amount): #defining clear, a funcion which prints a certain amount of e
 
 def scan(syslvl,scansize): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
-    clear(100) #100 lines of nothing
     print("""
-           _____                        ____  _  _  __
+          _____                        ____  _  _  __
           / ____|                      |___ \\| || |/_ |
          | (___   ___ __ _ _ __   __   ____) | || |_| |
           \\___ \\ / __/ _` | '_ \\  \\ \\ / /__ <|__   _| |
           ____) | (_| (_| | | | |  \\ V /___) |  | | | |
          |_____/ \\___\\__,_|_| |_|   \\_/|____(_) |_| |_|
     """)
+    print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
     time.sleep(0.5)
     areasamount = random.randint(1,(scansize*syslvl))
-    print("\t\t _______________________") #the box around the objects displayed in the scanner
-    if(scanned == 0):
-        areasdef(areasamount,syslvl)
-        scanned = 1
-    else:
-        i = 1
-        while(i<=n):
-            print("\t\t| ",i,". ",str(areas[i]),"\t|")
-            i= i+1
-
-    print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
-    #print(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
-    print("\nType \"help\" to show help.")
-    choice = input("scan: ") # taking input from player
-    if(choice.lower() == "help"):
-        print("\n\nDo you wish to:\n\t1. scan a chosen object in more detail, for life signs, weaponry etc.\n\t2. Fly to the chosen object and prepare to dock/board/land.\n\t3. Exit Scanner")
-        choice = input("scan:")
-        if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
-            print("this will exit scan and take you to marauderer. confirm (y =leave/n = stay)")
-            choice = input("scan: ")
-            if(choice == "y"):
-                marauder.marauder(syslvl,scanned)
-            else:
-                scan(syslvl,scansize)
-                #stuff here
-        elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
-            print("Which object would you like to fly to? (full name or value)")
-            choice = input("scan: ")
-            #stuff here
-    elif(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
+    choice = input("scan: ")
+    if(choice == "scan"):
+        print("\t\t _______________________") #the box around the objects displayed in the scanner
+        if(scanned == 0):
+            areasdef(areasamount,syslvl)
+            scanned = 1
+        else:
+            i = 1
+            while(i<=n):
+                print("\t\t| ",i,". ",str(areas[i]),"\t|")
+                i= i+1
+                print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
+    elif(choice.lower() == "help"):
+        print("scan: do a wide scan of the local solar system")
+        print("dscan: do a detailed scan of a specific location")
+        print("exit: exit scan and return to shell")
+        print("clear: clear the console")
+    elif(choice == "dscan"): #processing input
         print("this will exit scan and take you to marauder. confirm (y/n)")
         choice = input("scan: ")
         if(choice == "y"):
             marauder.marauder(syslvl,scanned)
-        else:
-            scan(syslvl,scansize)
-    elif(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
-        print("Which object would you like to fly to? (full name or value)")
-        choice = input("scan: ")
-        #stuff here
     elif(choice == "exit"):
 	    console(1)
-		
+    elif(choice == "clear"):
+        clear(100)
+    else:
+        print("scan:",choice,": command not found")
+    scan(syslvl,scansize)
+
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
     global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
     if(intro == 1): #checking whether or not the player is in the intro/tutorial (if so it always creates a neutral ship

@@ -5,20 +5,21 @@ import marauder
 def console(logo):
     global shellprompt
     if(logo == 1):
-        clear(100)
-        print("""
-                  _____  _____    _____  _    _    __      _____  _  _   ___
-         /\\      / ____||_   _|  / ____|| |  | |   \\ \\    / /__ \\| || | / _ \\
-        /  \\    | (___    | |   | (___  | |__| |    \\ \\  / /   ) | || || (_) |
-       / /\\ \\    \\___ \\   | |    \\___ \\ |  __  |     \\ \\/ /   / /|__   _\__, |
-      / ____ \\ _ ____) | _| |_ _ ____) || |  | |_     \\  /   / /_ _ | |   / /
-     /_/    \\_(_)_____(_)_____(_)_____(_)_|  |_(_)     \\/   |____(_)|_|  /_/
-
-     Advanced     Ship  Interactive    Shell          Version      2.49
-
-
-    """)
-        print("Type \"help\" to view help.")
+#        clear(100)
+#        print("""
+#                  _____  _____    _____  _    _    __      _____  _  _   ___
+#         /\\      / ____||_   _|  / ____|| |  | |   \\ \\    / /__ \\| || | / _ \\
+#        /  \\    | (___    | |   | (___  | |__| |    \\ \\  / /   ) | || || (_) |
+#       / /\\ \\    \\___ \\   | |    \\___ \\ |  __  |     \\ \\/ /   / /|__   _\__, |
+#      / ____ \\ _ ____) | _| |_ _ ____) || |  | |_     \\  /   / /_ _ | |   / /
+#     /_/    \\_(_)_____(_)_____(_)_____(_)_|  |_(_)     \\/   |____(_)|_|  /_/
+#
+#     Advanced     Ship  Interactive    Shell          Version      2.49
+#
+#
+#
+#    """)
+        print("Type \"help\" to view a list of commands")
         time.sleep(0.5)
         shellprompt = "[name@shipname ~]$ "
         su = 0
@@ -29,15 +30,18 @@ def console(logo):
         marauder.marauder(1,1)
     elif(choice == "help"):
         print("Commands available:")
-        clear(1)
         print("scan: scans the area around your ship.")
-        clear(1)
         print("marauder: scans ships for loot, weapons and enemies.") #more commands here when implimented
+        print("clear: clear the console")
     elif(choice == "su"):
         choice = input("Password: ")
         if(choice == "doggos"):
             shellprompt = "[name@shipname ~]# "
             su = 1
+    elif(choice == "clear"):
+        clear(50)
+        time.sleep(0.1)
+        clear(50)
     else:
         print("asish:",choice,": command not found")
     console(0)
@@ -53,4 +57,5 @@ clear(100)
 if(input("Do you wish to skip intro/tuorial? (y/n)") == "n"): #deciding whether or not to call intro
     intro()#calling intro mission
 else:
+    clear(100)
     console(1)
