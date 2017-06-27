@@ -18,7 +18,7 @@ def console(logo):
 
 
     """)
-        print("Type \"help\" to view help or \"cmds\" to view commands.")
+        print("Type \"help\" to view help.")
         time.sleep(0.5)
         shellprompt = "[name@shipname ~]$ "
         su = 0
@@ -27,10 +27,7 @@ def console(logo):
         scan.scan(1,1)
     elif(choice == "marauder"):
         marauder.marauder(1,1)
-    elif(choice.lower() == "help"):
-        print("Format:") #used seperate prints to make it easier to read when editing (can easily be changed in the future)
-        print("command_name -alternate_option (what to type) : description (what it does)")
-    elif(choice == "cmds"):
+    elif(choice == "help"):
         print("Commands available:")
         clear(1)
         print("scan: scans the area around your ship.")
@@ -49,6 +46,7 @@ def console(logo):
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
 
+# And so it begins
 print("Best viewed in fullscreen.")
 time.sleep(1)
 clear(100)
