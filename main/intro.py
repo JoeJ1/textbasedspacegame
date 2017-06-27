@@ -1,5 +1,6 @@
 import time
 import random
+import main
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 scanned = 0
 def clear(amount):
@@ -109,7 +110,7 @@ def scan(syslvl,scansize, logo =0): #intro should be whether or not this is the 
 
 
 def console(logo =0):
-    global shellprompt
+    global shellprompt, name, shipname
     clear(100)
     if(logo == 1):
        print("""
@@ -156,10 +157,7 @@ def console(logo =0):
         console()
 
 
-
-print("You are a mercinary, a soldier for hire (space pirate).\nYour mission: to voyage to the centre of the galaxy and find out what lies there. \nBut for now, think a little smaller. Look for a cargo ship in this solar system by typing scan into your ship's console.")
-print("\n\nWhat is your name?")
-name = input(": ")
-print("\n\nWhat would you like your ship's name to be?")
-shipname = input(": ")
-console(1)
+def intro():
+    print("You are a mercinary, a soldier for hire (space pirate).\nYour mission: to voyage to the centre of the galaxy and find out what lies there. \nBut for now, think a little smaller. Look for a cargo ship in this solar system by typing scan into your ship's console.")
+    input("\n\nPress Enter to contine... ")
+    console(1)

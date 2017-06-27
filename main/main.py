@@ -1,7 +1,8 @@
 import time
 import scan
 import marauder
-scanned = 0
+import intro
+
 def console(logo):
     global shellprompt
     if(logo == 1):
@@ -38,8 +39,7 @@ def console(logo):
     elif(choice == "su"):
         choice = input("Password: ")
         if(choice == "doggos"):
-            shellprompt = "[",name,"@",shipname," ~]# "
-            shellprompt = ''.join(shellprompt)
+            shellprompt = "[name@shipname ~]# "
             su = 1
     elif(choice == "clear"):
         clear(50)
@@ -60,7 +60,7 @@ clear(100)
 name = input("What ur nam bro? ")
 shipname = input("What that ship nam bro?")
 if(input("Do you wish to skip intro/tuorial? (y/n)") == "n"): #deciding whether or not to call intro
-    intro()#calling intro mission
+    intro.intro() #calling intro mission
 else:
     clear(100)
     console(1)
