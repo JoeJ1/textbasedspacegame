@@ -21,6 +21,7 @@ def console(logo):
         print("Type \"help\" to view help or \"cmds\" to view commands.")
         time.sleep(0.5)
         shellprompt = "[name@shipname ~]$ "
+        su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
         scan.scan(1,1)
