@@ -55,6 +55,7 @@ def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan
                 i= i+1
         print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
     elif(choice.lower() == "help"):
+        print("Commands available:")
         print("scan: do a wide scan of the local solar system")
         print("dscan: do a detailed scan of a specific location")
         print("exit: exit scan and return to shell")
