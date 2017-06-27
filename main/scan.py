@@ -41,7 +41,7 @@ def scan(syslvl,scansize): #intro should be whether or not this is the scan in t
     print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
     time.sleep(0.5)
     areasamount = random.randint(1,(scansize*syslvl))
-    choice = input("scan: ")
+    choice = input("(scan) ")
     if(choice == "scan"):
         print("\t\t _______________________") #the box around the objects displayed in the scanner
         if(scanned == 0):
@@ -60,7 +60,7 @@ def scan(syslvl,scansize): #intro should be whether or not this is the scan in t
         print("clear: clear the console")
     elif(choice == "dscan"): #processing input
         print("this will exit scan and take you to marauder. confirm (y/n)")
-        choice = input("scan: ")
+        choice = input("(scan) ")
         if(choice == "y"):
             marauder.marauder(syslvl,scanned)
     elif(choice == "exit"):
