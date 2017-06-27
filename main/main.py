@@ -22,7 +22,7 @@ def console(logo):
         print("Type \"help\" to view a list of commands")
         time.sleep(0.5)
         shellprompt = "[",name,"@",shipname," ~]$ "
-        ''.join(shellprompt)
+        shellprompt = ''.join(shellprompt)
         su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
