@@ -34,7 +34,7 @@ def console(logo):
         clear(1)
         print("scan: scans the area around your ship.")
         clear(1)
-        print("marauderer: scans ships for loot, weapons and enemies.") #more commands here when implimented
+        print("marauder: scans ships for loot, weapons and enemies.") #more commands here when implimented
     elif(choice == "su"):
         choice = input("Password: ")
         if(choice == "doggos"):
