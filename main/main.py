@@ -38,7 +38,8 @@ def console(logo):
     elif(choice == "su"):
         choice = input("Password: ")
         if(choice == "doggos"):
-            shellprompt = "[name@shipname ~]# "
+            shellprompt = "[",name,"@",shipname," ~]# "
+            shellprompt = ''.join(shellprompt)
             su = 1
     elif(choice == "clear"):
         clear(50)
