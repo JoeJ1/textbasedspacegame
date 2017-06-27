@@ -157,7 +157,7 @@ def console(logo =0):
         console()
 
 
-def intro():
-    print("You are a mercinary, a soldier for hire (space pirate).\nYour mission: to voyage to the centre of the galaxy and find out what lies there. \nBut for now, think a little smaller. Look for a cargo ship in this solar system by typing scan into your ship's console.")
-    input("\n\nPress Enter to contine... ")
-    console(1)
+clear(100)
+print("You are a mercinary, a soldier for hire (space pirate).\nYour mission: to voyage to the centre of the galaxy and find out what lies there. \nBut for now, think a little smaller. Look for a cargo ship in this solar system by typing scan into your ship's console.")
+input("\n\nPress Enter to contine... ")
+console(1)
