@@ -25,7 +25,7 @@ def console(logo):
         su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
-        scan.scan(1,1)
+        scan.scan(1,1,1)
     elif(choice == "marauder"):
         marauder.marauder(1,1)
     elif(choice == "help"):
