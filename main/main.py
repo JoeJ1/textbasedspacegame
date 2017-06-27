@@ -29,6 +29,7 @@ def console(logo):
     elif(choice == "marauder"):
         marauder.marauder(1,1)
     elif(choice == "help"):
+        print("Advanced Ship Interactive Shell Version 2.49")
         print("Commands available:")
         print("scan: scans the area around your ship.")
         print("marauder: scans ships for loot, weapons and enemies.") #more commands here when implimented
