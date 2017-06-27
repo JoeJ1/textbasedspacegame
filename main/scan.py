@@ -70,14 +70,13 @@ def scan(syslvl,scansize,intro = 0): #intro should be whether or not this is the
             print("Which object would you like to fly to? (full name or value)")
             choice = input(": ")
             #stuff here
-#    if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
-#        print("this will exit scan and take you to marauder. confirm (y/n)")
-#        choice = input(": ")
-#        if(choice == "y"):
-#            marauder(syslvl,scanned,intro)
-#        else:
-#            scan(syslvl,scansize,intro)
-#could just tell them to go back to shell or make a variable for comm with marauder.
+    if(choice == "scan" or choice == "1" or choice == "one" or choice == "one" or choice == "scan" or choice == "scan" or choice == "s" or choice == "s" or choice == "1k."): #processing input
+        print("this will exit scan and take you to marauder. confirm (y/n)")
+        choice = input(": ")
+        if(choice == "y"):
+            marauder.marauder(syslvl,scanned,intro)
+        else:
+            scan(syslvl,scansize,intro)
     if(choice == "2" or choice == "two" or choice == "Two" or choice == "Fly" or choice == "fly" or choice == "dock" or choice == "board"):
         print("Which object would you like to fly to? (full name or value)")
         choice = input(": ")
