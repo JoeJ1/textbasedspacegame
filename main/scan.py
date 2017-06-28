@@ -82,20 +82,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 c = random.randint(1,25) + 64
                 areaname = "NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))  #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
-                if(areaname[n] == ""): #checking to see whether or not to override the variables
-                    areas[n] = areaname
-                elif( == ""):
-                    a3 = areaname
-                    b3 = "NEU"
-                    areas[n] = a3
-                elif(a4 == ""):
-                    a4 = areaname
-                    b4 = "NEU"
-                    areas[n] = a4
-                elif(a5 == ""):
-                    a5 = areaname
-                    b5 = "NEU"
-                    areas[n] = a5
+                areas[n] = areaname
                 print("\t\t| ",n,". ",areaname,"\t|")
             elif(areatype == 6 or areatype == 7): #20% chance of a friendly ship being generated
                 n = n+1 # n defines what number to apply to each area
@@ -104,14 +91,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 c = random.randint(1,25) + 64
                 areaname = "CORDIAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
-                if(a6 == ""): #checking to see whether or not to override the variables
-                    b6 = "FRE"
-                    a6 = areaname
-                    areas[n] = a6
-                elif(a7 == ""):
-                    b7 = "FRE"
-                    a7 = areaname
-                    areas[n] = a7
+                areas[n] = areaname
                 print("\t\t| ",n,". ",areaname,"\t|")
             elif(areatype == 8 or areatype == 9): #20% chance of creating a hostile ship
                 n = n+1 # n defines what number to apply to each area
@@ -120,14 +100,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 c = random.randint(1,25) + 64
                 areaname = "HOSTILE-",chr(a),chr(b),chr(c),"-",str(random.randint(10,99)) #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
-                if(a8 == ""): #checking to see whether or not to override the variables
-                    b8 = "HOS"
-                    a8 = areaname
-                    areas[n] = a8
-                elif(a9 == ""):
-                    b9 = "HOS"
-                    a9 = areaname
-                    areas[n] = a9
+                areas[n] = areaname
                 print("\t\t| ",n,". ",areaname,"\t|")
             else: # 10% chance of generating a station
                 n = n+1 # n defines what number to apply to each area
@@ -136,9 +109,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 c = random.randint(1,25) + 64
                 areaname = "STATION-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
-                b10 = "STA"
-                a10 = areaname
-                areas[n]=a10
+                areas[n]=areaname
                 print("\t\t| ",n,". ",areaname,"\t|")
         #print(areas)
 
@@ -169,4 +140,3 @@ def dscan(syslvl,scanned):
                 print("Worked!")
                 print(str(ships[int(choice)]))
                 #stuff here
-
