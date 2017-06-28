@@ -1,6 +1,7 @@
 import time
 import scan
 import var
+var.var()
 def console(logo):
     global shellprompt, su
     if(logo == 1):
@@ -20,7 +21,7 @@ def console(logo):
 #    """)
         print("Type \"help\" to view a list of commands")
         time.sleep(0.5)
-        shellprompt = "[",name,"@",shipname,"]$ "
+        shellprompt = "[",var.name,"@",var.shipname,"]$ "
         shellprompt = ''.join(shellprompt)
         su = 0
     choice = input(shellprompt)
@@ -34,7 +35,7 @@ def console(logo):
     elif(choice == "su" and su == 0):
         choice = input("Password: ")
         if(choice == "doggos"):
-            shellprompt = "[",name,"@",shipname,"]# "
+            shellprompt = "[",var.name,"@",var.shipname,"]# "
             shellprompt = ''.join(shellprompt)
             su = 1
         else:
@@ -44,7 +45,7 @@ def console(logo):
         time.sleep(0.1)
         clear(50)
     elif(choice == "exit" and su == 1):
-        shellprompt = "[",name.lower(),"@",shipname.lower()," ~]$ "
+        shellprompt = "[",var.name.lower(),"@",var.shipname.lower()," ~]$ "
         shellprompt = ''.join(shellprompt)
         su = 0
         clear(50)
