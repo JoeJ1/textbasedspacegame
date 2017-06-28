@@ -1,8 +1,6 @@
 import time
 import random
 from main import *
-areas = ["","","","","","","","","","","","","",""] #defining the array of areas
-scanned = 0
 def clear(amount):
     print("\n"*amount)
 
@@ -21,48 +19,8 @@ def areasdef(areasamount,syslvl): #areasdef defines the type of area in a system
     areas[n] = a1
     b1 = "NEU"
 
-
-def intromarauder(syslvl,scanned):
-    global areas, scansize
-    clear(100)
-    current = ""
-    ships = ["","","","","","","","","","","","","","","","","","",""]
-    a = 1
-    print("""
-               __  ___                           __                           ___    ____
-              /  |/  /___ _ ____ ___ _ __ __ ___/ /___  ____ ___  ____  _  __<  /   |_  /
-             / /|_/ // _ `// __// _ `// // // _  // -_)/ __// -_)/ __/ | |/ // /_  _/_ <
-            /_/  /_/ \\_,_//_/   \\_,_/ \\_,_/ \\_,_/ \\__//_/   \\__//_/    |___//_/(_)/____/
-    """)
-    if(scanned == 0):
-        print("Must scan for ships before running.")
-        scan(syslvl,scansize)
-    else:
-        print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
-        print("type the name of the ship or 1")
-        print("\t\t _______________________")
-        while(a<=n):
-            current = str(areas[a])
-            if(current[:7] == "NEUTRAL" or current[:7] == "CORDIAL" or current[:7] == "HOSTILE"):
-                ships[a] = areas[a]
-                print("\t\t| ",a,str(ships[a]),"\t|")
-            a = a +1
-        print("\t\t|_______________________|")
-        choice = input(": ")
-        if(str(choice) in ships):
-            print("Worked!")
-            #stuff here
-        elif(choice.isdigit()):
-            if(int(choice) < a):
-                print("Worked!")
-                print(str(ships[int(choice)]))
-                #stuff here
-
-
-
-
 def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
-    global n, areas, scanned
+    global n, areas, scanned, scansize
     if(logo == 1):
         print("""
                _____                        ____  _  _  __
@@ -96,7 +54,34 @@ def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is
         print("this will exit scan and take you to marauder. confirm (y/n)")
         choice = input("(scan) ")
         if(choice == "y"):
-            marauder(syslvl,scanned)
+                clear(100)
+                current = ""
+                ships = ["","","","","","","","","","","","","","","","","","",""]
+                a = 1
+                if(scanned == 0):
+                    print("Must scan for ships before running.")
+                    scan(syslvl,scansize)
+                else:
+                    print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
+                    print("type the name of the ship or 1")
+                    print("\t\t _______________________")
+                    while(a<=n):
+                        current = str(areas[a])
+                        if(current[:7] == "NEUTRAL" or current[:7] == "CORDIAL" or current[:7] == "HOSTILE"):
+                            ships[a] = areas[a]
+                            print("\t\t| ",a,str(ships[a]),"\t|")
+                        a = a +1
+                    print("\t\t|_______________________|")
+        choice = input(": ")
+        if(str(choice) in ships):
+            print("Worked!")
+            #stuff here
+        elif(choice.isdigit()):
+            if(int(choice) < a):
+                print("Worked!")
+                print(str(ships[int(choice)]))
+                #stuff here
+
     elif(choice == "exit"):
 	    console(1)
     elif(choice == "clear"):
@@ -128,9 +113,7 @@ def introconsole(logo =0):
     su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
-        scan(1,1,1)
-    elif(choice == "marauder"):
-        marauder(1,1)
+        introscan(1,1,1)
     elif(choice == "help"):
         print("\nAdvanced Ship Interactive Shell Version 2.49")
         print("\nCommands available:")
@@ -154,4 +137,4 @@ def intro():
     clear(100)
     print("You are a mercinary, a soldier for hire (space pirate).\nYour mission: to voyage to the centre of the galaxy and find out what lies there. \nBut for now, think a little smaller. Look for a cargo ship in this solar system by typing scan into your ship's console.")
     input("\n\nPress Enter to contine... ")
-    console(1)
+    introconsole(1)
