@@ -1,4 +1,5 @@
 import time
+import scan
 def console(logo):
     global shellprompt, su
     if(logo == 1):
