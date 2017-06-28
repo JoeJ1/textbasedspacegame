@@ -1,6 +1,5 @@
 import random
 import time
-import marauder
 
 a1 = "" #A variables are the names of the ship that the player sees
 a2 = ""
@@ -30,17 +29,17 @@ def clear(amount): #defining clear, a funcion which prints a certain amount of e
 
 def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
-	if(logo == 1):
-    	print("""
+    if(logo == 1):
+        print("""
            _____                        ____  _  _  __
           / ____|                      |___ \\| || |/_ |
          | (___   ___ __ _ _ __   __   ____) | || |_| |
           \\___ \\ / __/ _` | '_ \\  \\ \\ / /__ <|__   _| |
           ____) | (_| (_| | | | |  \\ V /___) |  | | | |
          |_____/ \\___\\__,_|_| |_|   \\_/|____(_) |_| |_|
-    	""")
-    	print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
-    	time.sleep(0.5)
+        """)
+        print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
+        time.sleep(0.5)
     areasamount = random.randint(1,(scansize*syslvl))
     choice = input("(scan) ")
     if(choice == "scan"):
@@ -53,17 +52,17 @@ def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan
             while(i<=n):
                 print("\t\t| ",i,". ",str(areas[i]),"\t|")
                 i= i+1
-                print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
+        print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
     elif(choice.lower() == "help"):
         print("\nscan: do a wide scan of the local solar system")
         print("dscan: do a detailed scan of a specific location")
         print("exit: exit scan and return to shell")
         print("clear: clear the console")
     elif(choice == "dscan"): #processing input
-        print("this will exit scan and take you to marauder. confirm (y/n)")
+        print("this will perform a detailed scan of an object. confirm (y/n)")
         choice = input("(scan) ")
         if(choice == "y"):
-            marauder.marauder(syslvl,scanned)
+            dscan(1,1)
     elif(choice == "exit"):
 	    console(1)
     elif(choice == "clear"):
@@ -170,7 +169,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 print("\t\t| ",n,". ",areaname,"\t|")
         #print(areas)
 
-def dscan(syslvl,scanned,intro = 0):
+def dscan(syslvl,scanned):
     global areas
     clear(100)
     current = ""
@@ -187,9 +186,6 @@ def dscan(syslvl,scanned,intro = 0):
                 ships[a] = areas[a]
                 print("\t\t| ",a,str(ships[a]),"\t|")
             a = a +1
-        if(intro == 1):
-            clear(1)
-            print("type the name of the ship")
         print("\t\t|_______________________|")
         choice = input(": ")
         if(str(choice) in ships):
