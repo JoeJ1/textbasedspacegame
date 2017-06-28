@@ -1,6 +1,7 @@
 import random
 import time
 import console
+import var
 scanned = 0
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines

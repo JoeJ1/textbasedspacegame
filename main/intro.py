@@ -1,5 +1,6 @@
 import time
 import random
+import var
 scanned = 0
 areas = [""]*10
 def clear(amount):
