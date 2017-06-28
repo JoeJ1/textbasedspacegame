@@ -1,6 +1,6 @@
 import time
 import random
-import main
+from main import *
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 scanned = 0
 def clear(amount):
@@ -33,8 +33,6 @@ def marauder(syslvl,scanned):
               /  |/  /___ _ ____ ___ _ __ __ ___/ /___  ____ ___  ____  _  __<  /   |_  /
              / /|_/ // _ `// __// _ `// // // _  // -_)/ __// -_)/ __/ | |/ // /_  _/_ <
             /_/  /_/ \\_,_//_/   \\_,_/ \\_,_/ \\_,_/ \\__//_/   \\__//_/    |___//_/(_)/____/
-
-
     """)
     if(scanned == 0):
         print("Must scan for ships before running.")
@@ -120,11 +118,7 @@ def console(logo =0):
       / /\\ \\    \\___ \\   | |    \\___ \\ |  __  |     \\ \\/ /   / /|__   _\__, |
      / ____ \\ _ ____) | _| |_ _ ____) || |  | |_     \\  /   / /_ _ | |   / /
     /_/    \\_(_)_____(_)_____(_)_____(_)_|  |_(_)     \\/   |____(_)|_|  /_/
-
     Advanced     Ship  Interactive    Shell          Version      2.49
-
-
-
         """)
     print("\nThis is the console from which you will be able to use all the programs on your ship's system. \nInstall new programs or get updates for currently installed programs at space stations.")
     print("\n\nType \"help\" to view a list of commands")
