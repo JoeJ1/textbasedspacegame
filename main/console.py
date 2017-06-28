@@ -1,5 +1,4 @@
 import time
-from main import *
 def console(logo):
     global shellprompt, su
     if(logo == 1):
