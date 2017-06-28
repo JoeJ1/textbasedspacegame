@@ -1,6 +1,6 @@
 def var():
     global areas, scanned
-    areas = [""*10]
+    areas = ["","","","","","","","","",""]
     scanned = 0
     name = ""
     shipname = ""
