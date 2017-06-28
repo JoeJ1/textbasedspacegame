@@ -109,7 +109,7 @@ def introconsole(logo =0):
     print("\nThis is the console from which you will be able to use all the programs on your ship's system. \nInstall new programs or get updates for currently installed programs at space stations.")
     print("\n\nType \"help\" to view a list of commands")
     time.sleep(0.5)
-    shellprompt = "$ "
+    shellprompt = "[",var.name,"@",var.shipname,"]$ "
     shellprompt = ''.join(shellprompt)
     su = 0
     choice = input(shellprompt)
