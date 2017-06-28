@@ -1,7 +1,7 @@
 import time
 import scan
 import var
-var.var()
+
 def console(logo):
     global shellprompt, su
     if(logo == 1):
