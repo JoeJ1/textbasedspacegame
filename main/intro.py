@@ -1,8 +1,6 @@
 import time
 import random
 import var
-scanned = 0
-areas = [""]*10
 def clear(amount):
     print("\n"*amount)
 
@@ -33,10 +31,10 @@ def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is
              |_____/ \\___\\__,_|_| |_|   \\_/|____(_) |_| |_|
         """)
         print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
-    time.sleep(0.5)
+        time.sleep(0.5)
     areasamount = random.randint(1,(scansize*syslvl))
     choice = input("(scan) ")
-    if(choice == "scan"):
+    if(choice == "wscan"):
         print("\t\t _______________________") #the box around the objects displayed in the scanner
         if(scanned == 0):
             introareasdef(areasamount,syslvl)
@@ -48,7 +46,7 @@ def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is
                 i= i+1
         print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
     elif(choice.lower() == "help"):
-        print("\nscan: do a wide scan of the local solar system")
+        print("\nwscan: do a wide scan of the local solar system")
         print("dscan: do a detailed scan of a specific location")
         print("exit: exit scan and return to shell")
         print("clear: clear the console")
