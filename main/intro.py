@@ -1,6 +1,6 @@
 import time
 import random
-
+from main import *
 def clear(amount):
     print("\n"*amount)
 
