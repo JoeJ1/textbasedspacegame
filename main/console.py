@@ -52,3 +52,6 @@ def console(logo):
     else:
         print("asish:",choice,": command not found")
     console(0)
+
+def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
+    print("\n"*amount)

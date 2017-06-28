@@ -1,5 +1,6 @@
 import random
 import time
+import console
 scanned = 0
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
@@ -42,7 +43,7 @@ def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan
         if(choice == "y"):
             dscan(1,1)
     elif(choice == "exit"):
-	    console(1)
+	    console.console(1)
     elif(choice == "clear"):
         clear(100)
     else:
