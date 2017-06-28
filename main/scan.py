@@ -105,7 +105,7 @@ def dscan(syslvl,scanned):
                 print("\t\t| ",a,str(ships[a]),"\t|")
             a = a +1
         print("\t\t|_______________________|")
-        choice = input("(scan) ")
+        choice = input(": ")
         if(str(choice) in ships):
             print("Scanning...")
             time.sleep(2)
