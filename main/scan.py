@@ -2,13 +2,10 @@ import random
 import time
 import console
 import var
-scanned = 0
-areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
 
-def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
-    global n, areas, scanned
+def scan(logo): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     if(logo == 1):
         print("""
            _____                        ____  _  _  __
@@ -20,29 +17,16 @@ def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan
         """)
         print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
         time.sleep(0.5)
-    areasamount = random.randint(1,(scansize*syslvl))
     choice = input("(scan) ")
-    if(choice == "scan"):
-        print("\t\t _______________________") #the box around the objects displayed in the scanner
-        if(scanned == 0):
-            areasdef(areasamount,syslvl)
-            scanned = 1
-        else:
-            i = 1
-            while(i<=n):
-                print("\t\t| ",i,". ",str(areas[i]),"\t|")
-                i= i+1
-        print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner
+    if(choice == "wscan"):
+        wscan(1,1)
     elif(choice.lower() == "help"):
-        print("\nscan: do a wide scan of the local solar system")
+        print("\nwscan: do a wide scan of the local solar system")
         print("dscan: do a detailed scan of a specific location")
         print("exit: exit scan and return to shell")
         print("clear: clear the console")
     elif(choice == "dscan"): #processing input
-        print("this will perform a detailed scan of an object. confirm (y/n)")
-        choice = input("(scan) ")
-        if(choice == "y"):
-            dscan(1,1)
+        dscan(1,1)
     elif(choice == "exit"):
 	    console.console(1)
     elif(choice == "clear"):
@@ -141,3 +125,19 @@ def dscan(syslvl,scanned):
                 print("Worked!")
                 print(str(ships[int(choice)]))
                 #stuff here
+
+def wscan(syslvl,scansize):
+    global syslvl, areas, scanned, i, n
+    areasamount = random.randint(1,(scansize*syslvl))
+    print("Scanning...")
+    time.sleep(2)
+    print("\t\t _______________________") #the box around the objects displayed in the scanner
+    if(scanned == 0):
+        areasdef(areasamount,syslvl)
+        scanned = 1
+    else:
+        i = 1
+        while(i<=n):
+            print("\t\t| ",i,". ",str(areas[i]),"\t|")
+            i= i+1
+    print("\t\t|_______________________|") # the bottom half of the box around objects in the scanner

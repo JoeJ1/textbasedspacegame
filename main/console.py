@@ -26,9 +26,9 @@ def console(logo):
         su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
-        scan.scan(1,1,1)
+        scan.scan(1)
     elif(choice == "help"):
-        print("Advanced Ship Interactive Shell Version 2.49")
+        print("\nAdvanced Ship Interactive Shell Version 2.49")
         print("Commands available:")
         print("scan: scans the area around your ship.")
         print("clear: clear the console")
