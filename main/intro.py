@@ -20,7 +20,7 @@ def areasdef(areasamount,syslvl): #areasdef defines the type of area in a system
     b1 = "NEU"
 
 def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
-    global n, areas, scanned, scansize
+    global n, areas, scanned
     if(logo == 1):
         print("""
                _____                        ____  _  _  __
