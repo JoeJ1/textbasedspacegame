@@ -170,7 +170,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
         #print(areas)
 
 def dscan(syslvl,scanned):
-    global areas
+    global areas,n
     clear(100)
     current = ""
     ships = ["","","","","","","","","","","","","","","","","","",""]
