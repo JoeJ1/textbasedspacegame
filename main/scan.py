@@ -28,18 +28,19 @@ scanned = 0
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
 
-def scan(syslvl,scansize): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
+def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
-    print("""
+	if(logo == 1):
+    	print("""
            _____                        ____  _  _  __
           / ____|                      |___ \\| || |/_ |
          | (___   ___ __ _ _ __   __   ____) | || |_| |
           \\___ \\ / __/ _` | '_ \\  \\ \\ / /__ <|__   _| |
           ____) | (_| (_| | | | |  \\ V /___) |  | | | |
          |_____/ \\___\\__,_|_| |_|   \\_/|____(_) |_| |_|
-    """)
-    print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
-    time.sleep(0.5)
+    	""")
+    	print("Welcome to Scan v3.41! Type \"help\" to view a list of commands.")
+    	time.sleep(0.5)
     areasamount = random.randint(1,(scansize*syslvl))
     choice = input("(scan) ")
     if(choice == "scan"):
@@ -69,7 +70,7 @@ def scan(syslvl,scansize): #intro should be whether or not this is the scan in t
         clear(100)
     else:
         print("scan:",choice,": command not found")
-    scan(syslvl,scansize)
+    scan(syslvl,scansize,0)
 
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
     global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
