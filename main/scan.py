@@ -1,7 +1,5 @@
 import random
 import time
-areas = ["","","","","","","","","","","","","",""] #defining the array of areas
-scanned = 0
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
