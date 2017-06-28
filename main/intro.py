@@ -5,7 +5,7 @@ def clear(amount):
     print("\n"*amount)
 
 
-def areasdef(areasamount,syslvl): #areasdef defines the type of area in a system and its name
+def introareasdef(areasamount,syslvl): #areasdef defines the type of area in a system and its name
     global n
     n =1
     a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
@@ -37,7 +37,7 @@ def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is
     if(choice == "scan"):
         print("\t\t _______________________") #the box around the objects displayed in the scanner
         if(scanned == 0):
-            areasdef(areasamount,syslvl)
+            introareasdef(areasamount,syslvl)
             scanned = 1
         else:
             i = 1
@@ -139,4 +139,4 @@ def intro():
     clear(100)
     print("You are a mercinary, a soldier for hire (space pirate).\nYour mission: to voyage to the centre of the galaxy and find out what lies there. \nBut for now, think a little smaller. Look for a cargo ship in this solar system by typing scan into your ship's console.")
     input("\n\nPress Enter to contine... ")
-introconsole(1)
+    introconsole(1)
