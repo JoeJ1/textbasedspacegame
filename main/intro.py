@@ -1,6 +1,5 @@
 import time
 import random
-from main import *
 def clear(amount):
     print("\n"*amount)
 
@@ -60,7 +59,6 @@ def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is
                 a = 1
                 if(scanned == 0):
                     print("Must scan for ships before running.")
-                    scan(syslvl,scansize)
                 else:
                     print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
                     print("type the name of the ship or 1")
@@ -88,7 +86,7 @@ def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is
         clear(100)
     else:
         print("scan:",choice,": command not found")
-    scan(syslvl,scansize)
+    introscan(syslvl,scansize)
 
 
 
@@ -108,7 +106,7 @@ def introconsole(logo =0):
     print("\nThis is the console from which you will be able to use all the programs on your ship's system. \nInstall new programs or get updates for currently installed programs at space stations.")
     print("\n\nType \"help\" to view a list of commands")
     time.sleep(0.5)
-    shellprompt = "[",name,"@",shipname," ~]$ "
+    shellprompt = "$ "
     shellprompt = ''.join(shellprompt)
     su = 0
     choice = input(shellprompt)
@@ -124,7 +122,6 @@ def introconsole(logo =0):
         print("Type \"scan\"")
         clear(1)
         input("Press enter to continue.")
-        console(0)
     elif(choice == "clear"):
         clear(50)
         time.sleep(0.1)
@@ -133,7 +130,7 @@ def introconsole(logo =0):
         introscan()
     else:
         print("asish:",choice,": command not found")
-        introconsole()
+    introconsole(0)
 
 def intro():
     clear(100)
