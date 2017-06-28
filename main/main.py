@@ -16,7 +16,7 @@ clear(100)
 name = input("What is your name, mercenary? ")
 shipname = input("What is the name of your trusty ship? ")
 if(input("Do you wish to skip intro/tutorial? (y/n)") == "n"): #deciding whether or not to call intro
-    intro #calling intro mission
+    intro.intro() #calling intro mission
 else:
     clear(100)
     console.console(1)
