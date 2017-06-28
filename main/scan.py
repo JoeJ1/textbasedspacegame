@@ -1,26 +1,5 @@
 import random
 import time
-
-a1 = "" #A variables are the names of the ship that the player sees
-a2 = ""
-a3 = ""
-a4 = ""
-a5 = ""
-a6 = ""
-a7 = ""
-a8 = ""
-a9 = ""
-a10 = ""
-b1 = 0 #b variables are used to define the type of ship, only used for calculations, never seen by player
-b2 = 0
-b3 = 0
-b4 = 0
-b5 = 0
-b6 = 0
-b7 = 0
-b8 = 0
-b9 = 0
-b10 = 0
 areas = ["","","","","","","","","","","","","",""] #defining the array of areas
 scanned = 0
 
@@ -72,7 +51,7 @@ def scan(syslvl,scansize,logo): #intro should be whether or not this is the scan
     scan(syslvl,scansize,0)
 
 def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area in a system and its name
-    global a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,n
+    global n
     if(intro == 1): #checking whether or not the player is in the intro/tutorial (if so it always creates a neutral ship
         n =0
         a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
@@ -82,9 +61,7 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
         areaname = ''.join(areaname) #joining the list of values into one string (the name)
         print("\t\t| \/value  \/full name\t|")
         print("\t\t|",areaname,"\t|")
-        a1 = areaname
-        areas[n] = a1
-        b1 = "NEU"
+        areas[n] = areaname
     elif(intro == 0):
         n =0
         for i in range(0,areasamount):
@@ -96,10 +73,8 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 c = random.randint(1,25) + 64
                 areaname = "UNKNOWN-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100)) #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
-                a1 = areaname
-                b1 = "UNK"
-                areas[n] = a1
-                print("\t\t| ",n,". ",a1,"\t|")
+                areas[n] = areaname
+                print("\t\t| ",n,". ",areaname,"\t|")
             elif(areatype ==2 or areatype ==  3 or areatype == 4 or areatype == 5): #Making it a 40% chance to see a neutral ship
                 n = n+1 # n defines what number to apply to each area
                 a = random.randint(1,25) + 64 #a,b and c are ascii values of randomised letters for the names of objects
@@ -107,11 +82,9 @@ def areasdef(areasamount,syslvl,intro = 0): #areasdef defines the type of area i
                 c = random.randint(1,25) + 64
                 areaname = "NEUTRAL-",chr(a),chr(b),chr(c),"-",str(random.randint(0,100))  #creating the name of the object/area
                 areaname = ''.join(areaname) #joining the list of values into one string (the name)
-                if(a2 == ""): #checking to see whether or not to override the variables
-                    b2 = "NEU"
-                    a2 = areaname
-                    areas[n] = a2
-                elif(a3 == ""):
+                if(areaname[n] == ""): #checking to see whether or not to override the variables
+                    areas[n] = areaname
+                elif( == ""):
                     a3 = areaname
                     b3 = "NEU"
                     areas[n] = a3
