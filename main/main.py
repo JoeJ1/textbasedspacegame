@@ -2,13 +2,14 @@ import time
 import scan
 import intro
 import console
+import var
 
 def clear(amount): #defining clear, a funcion which prints a certain amount of empty lines
     print("\n"*amount)
 
 # And so it begins
 print("Best viewed in fullscreen.")
-log = open("log.txt", "w")
+var.var()
 time.sleep(1)
 clear(100)
 name = input("What is your name, mercenary? ")
