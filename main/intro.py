@@ -129,9 +129,11 @@ def introconsole(logo =0):
         clear(50)
         time.sleep(0.1)
         clear(50)
+    elif(choice == "scan"):
+        introscan()
     else:
         print("asish:",choice,": command not found")
-        console()
+        introconsole()
 
 def intro():
     clear(100)
