@@ -4,7 +4,7 @@ import marauder
 import intro
 
 def console(logo):
-    global shellprompt
+    global shellprompt, su
     if(logo == 1):
 #        clear(100)
 #        print("""
@@ -36,13 +36,22 @@ def console(logo):
         print("scan: scans the area around your ship.")
         print("marauder: scans ships for loot, weapons and enemies.") #more commands here when implimented
         print("clear: clear the console")
-    elif(choice == "su"):
+    elif(choice == "su" and su == 0):
         choice = input("Password: ")
         if(choice == "doggos"):
             shellprompt = "[",name.lower(),"@",shipname.lower()," ~]# "
             shellprompt = ''.join(shellprompt)
             su = 1
+        else:
+            print("na")
     elif(choice == "clear"):
+        clear(50)
+        time.sleep(0.1)
+        clear(50)
+    elif(choice == "exit" and su == 1):
+        shellprompt = "[",name.lower(),"@",shipname.lower()," ~]$ "
+        shellprompt = ''.join(shellprompt)
+        su = 0
         clear(50)
         time.sleep(0.1)
         clear(50)
