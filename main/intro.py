@@ -22,7 +22,7 @@ def areasdef(areasamount,syslvl): #areasdef defines the type of area in a system
     b1 = "NEU"
 
 
-def marauder(syslvl,scanned):
+def intromarauder(syslvl,scanned):
     global areas, scansize
     clear(100)
     current = ""
@@ -61,7 +61,7 @@ def marauder(syslvl,scanned):
 
 
 
-def scan(syslvl,scansize, logo =0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
+def introscan(syslvl,scansize, logo =0): #intro should be whether or not this is the scan in the intro (1 if it is 0 if it's not)
     global n, areas, scanned
     if(logo == 1):
         print("""
@@ -107,7 +107,7 @@ def scan(syslvl,scansize, logo =0): #intro should be whether or not this is the 
 
 
 
-def console(logo =0):
+def introconsole(logo =0):
     global shellprompt, name, shipname
     clear(100)
     if(logo == 1):
@@ -155,4 +155,3 @@ def intro():
     print("You are a mercinary, a soldier for hire (space pirate).\nYour mission: to voyage to the centre of the galaxy and find out what lies there. \nBut for now, think a little smaller. Look for a cargo ship in this solar system by typing scan into your ship's console.")
     input("\n\nPress Enter to contine... ")
     console(1)
-
