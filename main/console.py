@@ -1,3 +1,5 @@
+import time
+
 def console(logo):
     global shellprompt, su
     if(logo == 1):
