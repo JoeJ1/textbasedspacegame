@@ -1,5 +1,7 @@
 import time
 import random
+scanned = 0
+areas = [""]*10
 def clear(amount):
     print("\n"*amount)
 
