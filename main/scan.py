@@ -52,13 +52,13 @@ def areasdef(areasamount, syslvl):
             areaname = "UNKNOWN-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  # creating the name of the object/area
             areaname = ''.join(areaname)  # joining the list of values into one string (the name)
             var.areas[n] = areaname
-            print("\t\t| ",n,". ",areaname,"\t|")
+            print("\t\t| ", n, ". ", areaname, "\t|")
         elif(areatype == 2 or areatype == 3 or areatype == 4 or areatype == 5):  # Making it a 40% chance to see a neutral ship
             n = n + 1  # n defines what number to apply to each area
             a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
             b = random.randint(1, 25) + 64
             c = random.randint(1, 25) + 64
-            areaname = "NEUTRAL-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  #creating the name of the object/area
+            areaname = "NEUTRAL-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  # creating the name of the object/area
             areaname = ''.join(areaname)  # joining the list of values into one string (the name)
             var.areas[n] = areaname
             print("\t\t| ", n, ". ", areaname, "\t|")
@@ -67,8 +67,8 @@ def areasdef(areasamount, syslvl):
             a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
             b = random.randint(1, 25) + 64
             c = random.randint(1, 25) + 64
-            areaname = "CORDIAL-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100)) #creating the name of the object/area
-            areaname = ''.join(areaname) #joining the list of values into one string (the name)
+            areaname = "CORDIAL-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  # creating the name of the object/area
+            areaname = ''.join(areaname)  # joining the list of values into one string (the name)
             var.areas[n] = areaname
             print("\t\t| ", n, ". ", areaname, "\t|")
         elif(areatype == 8 or areatype == 9):  # 20% chance of creating a hostile ship
@@ -76,7 +76,7 @@ def areasdef(areasamount, syslvl):
             a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
             b = random.randint(1, 25) + 64
             c = random.randint(1, 25) + 64
-            areaname = "HOSTILE-", chr(a), chr(b), chr(c), "-", str(random.randint(10, 99)) #creating the name of the object/area
+            areaname = "HOSTILE-", chr(a), chr(b), chr(c), "-", str(random.randint(10, 99))  # creating the name of the object/area
             areaname = ''.join(areaname)  # joining the list of values into one string (the name)
             var.areas[n] = areaname
             print("\t\t| ", n, ". ", areaname, "\t|")
