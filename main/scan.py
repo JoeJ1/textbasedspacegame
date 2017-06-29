@@ -39,59 +39,6 @@ def scan(logo):
     scan(0)
 
 
-def areasdef(areasamount, syslvl):
-    global n
-    n = 0
-    for i in range(0, areasamount):
-        areatype = random.randint(1, 10)
-        if(areatype == 1):
-            n = n + 1  # n defines what number to apply to each area
-            a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
-            b = random.randint(1, 25) + 64
-            c = random.randint(1, 25) + 64
-            areaname = "UNKNOWN-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  # creating the name of the object/area
-            areaname = ''.join(areaname)  # joining the list of values into one string (the name)
-            var.areas[n] = areaname
-            print("\t\t| ", n, ". ", areaname, "\t|")
-        elif(areatype == 2 or areatype == 3 or areatype == 4 or areatype == 5):  # Making it a 40% chance to see a neutral ship
-            n = n + 1  # n defines what number to apply to each area
-            a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
-            b = random.randint(1, 25) + 64
-            c = random.randint(1, 25) + 64
-            areaname = "NEUTRAL-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  # creating the name of the object/area
-            areaname = ''.join(areaname)  # joining the list of values into one string (the name)
-            var.areas[n] = areaname
-            print("\t\t| ", n, ". ", areaname, "\t|")
-        elif(areatype == 6 or areatype == 7):  # 20% chance of a friendly ship being generated
-            n = n + 1  # n defines what number to apply to each area
-            a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
-            b = random.randint(1, 25) + 64
-            c = random.randint(1, 25) + 64
-            areaname = "CORDIAL-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  # creating the name of the object/area
-            areaname = ''.join(areaname)  # joining the list of values into one string (the name)
-            var.areas[n] = areaname
-            print("\t\t| ", n, ". ", areaname, "\t|")
-        elif(areatype == 8 or areatype == 9):  # 20% chance of creating a hostile ship
-            n = n+1  # n defines what number to apply to each area
-            a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
-            b = random.randint(1, 25) + 64
-            c = random.randint(1, 25) + 64
-            areaname = "HOSTILE-", chr(a), chr(b), chr(c), "-", str(random.randint(10, 99))  # creating the name of the object/area
-            areaname = ''.join(areaname)  # joining the list of values into one string (the name)
-            var.areas[n] = areaname
-            print("\t\t| ", n, ". ", areaname, "\t|")
-        else:  # 10% chance of generating a station
-            n = n+1  # n defines what number to apply to each area
-            a = random.randint(1, 25) + 64  # a,b and c are ascii values of randomised letters for the names of objects
-            b = random.randint(1, 25) + 64
-            c = random.randint(1, 25) + 64
-            areaname = "STATION-", chr(a), chr(b), chr(c), "-", str(random.randint(0, 100))  # creating the name of the object/area
-            areaname = ''.join(areaname)  # joining the list of values into one string (the name)
-            var.areas[n] = areaname
-            print("\t\t| ", n, ". ", areaname, "\t|")
-        # print(areas)
-
-
 def dscan(syslvl, scanned):
     global areas, n
     clear(100)
