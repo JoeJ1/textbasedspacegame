@@ -9,6 +9,7 @@ def clear(amount): #defining clear, a funcion which prints a certain amount of e
 
 # And so it begins
 print("Best viewed in fullscreen.")
+notes
 var.var()
 time.sleep(1)
 clear(100)
