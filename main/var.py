@@ -5,4 +5,3 @@ def var():
     name = ""
     shipname = ""
     notes = ""
-    subprocess.call(["shutdown", "/s"])
