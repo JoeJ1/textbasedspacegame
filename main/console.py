@@ -27,6 +27,10 @@ def console(logo):
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
         scan.scan(1)
+    elif(choice == "notes"):
+		notes = ""
+		print(notes)
+		notes = input("What do you want to add to your notes? ")
     elif(choice == "help"):
         print("\nAdvanced Ship Interactive Shell Version 2.49")
         print("Commands available:")
