@@ -8,9 +8,10 @@ def console(logo):
     if(logo == 1):
         print("Type \"help\" to view a list of commands")
         time.sleep(0.5)
-        shellprompt = "[", var.name.lower(), "@", var.shipname.lower(), " ~]$ "
+        shellprompt = "[", var.name.lower(), "@", var.shipname.lower(), " ~]$"
         shellprompt = ''.join(shellprompt)
         shellprompt = shellprompt.replace(" ", "")
+        shellprompt = shellprompt+" "
         su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
@@ -26,8 +27,10 @@ def console(logo):
     elif(choice == "su" and su == 0):
         choice = input("Password: ")
         if(choice == "doggos"):
-            shellprompt = "[", var.name, "@", var.shipname, " ~]# "
+            shellprompt = "[", var.name.lower(), "@", var.shipname.lower(), " ~]#"
             shellprompt = ''.join(shellprompt)
+            shellprompt = shellprompt.replace(" ", "")
+            shellprompt = shellprompt+" "
             su = 1
         else:
             print("na")

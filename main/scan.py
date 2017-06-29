@@ -41,7 +41,7 @@ def scan(logo):
 
 
 def dscan(syslvl, scanned):
-    global areas, n
+    global areas
     clear(100)
     current = ""
     ships = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
@@ -51,7 +51,7 @@ def dscan(syslvl, scanned):
     else:
         print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
         print("\t\t _______________________")
-        while(a <= n):
+        while(a <= var.n):
             current = str(var.areas[a])
             if(current[:7] == "NEUTRAL" or current[:7] == "CORDIAL" or current[:7] == "HOSTILE"):
                 ships[a] = var.areas[a]
