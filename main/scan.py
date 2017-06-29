@@ -2,6 +2,7 @@ import random
 import time
 import console
 import var
+import lvlgen
 
 
 def clear(amount):
@@ -80,7 +81,7 @@ def wscan(syslvl, scansize):
     print("Found", areasamount, "points of intrest. ")
     print("\t\t _______________________")  # the box around the objects displayed in the scanner
     if(var.scanned == 0):
-        areasdef(areasamount, syslvl)
+        lvlgen.areasdef(areasamount, syslvl)
         var.scanned = 1
     else:
         i = 1
