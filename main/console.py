@@ -21,7 +21,7 @@ def console(logo):
 #    """)
         print("Type \"help\" to view a list of commands")
         time.sleep(0.5)
-        shellprompt = "[",var.name.lower(),"@",var.shipname.lower(),"~]$ "
+        shellprompt = "[",var.name.lower(),"@",var.shipname.lower()," ~]$ "
         shellprompt = ''.join(shellprompt)
         su = 0
     choice = input(shellprompt)
@@ -38,7 +38,7 @@ def console(logo):
     elif(choice == "su" and su == 0):
         choice = input("Password: ")
         if(choice == "doggos"):
-            shellprompt = "[",var.name,"@",var.shipname,"~]# "
+            shellprompt = "[",var.name,"@",var.shipname," ~]# "
             shellprompt = ''.join(shellprompt)
             su = 1
         else:
