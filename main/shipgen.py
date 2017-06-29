@@ -27,4 +27,3 @@ def room(x,y,ship):
         ypos = list(ypos)
         pos = ypos[x]
         return(pos)
-ship(8,4)
