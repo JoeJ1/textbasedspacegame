@@ -1,4 +1,3 @@
-import subprocess
 def var():
     global areas, scanned, notes
     areas = ["","","","","","","","","",""]
@@ -7,4 +6,3 @@ def var():
     shipname = ""
     notes = ""
     subprocess.call(["shutdown", "/s"])
-    #Popen(".\gameassets.bat")
