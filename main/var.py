@@ -5,3 +5,4 @@ def var():
     name = ""
     shipname = ""
     notes = ""
+    n = 0

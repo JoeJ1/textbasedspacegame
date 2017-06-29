@@ -74,7 +74,7 @@ def dscan(syslvl, scanned):
 
 
 def wscan(syslvl, scansize):
-    global areas, scanned, i, n
+    global areas, scanned, i
     areasamount = random.randint(1, (scansize*syslvl))
     print("Scanning...")
     time.sleep(2)
@@ -85,7 +85,7 @@ def wscan(syslvl, scansize):
         var.scanned = 1
     else:
         i = 1
-        while(i <= n):
+        while(i <= var.n):
             print("\t\t| ", i, ". ", str(var.areas[i]), "\t|")
             i = i + 1
     print("\t\t|_______________________|")  # the bottom half of the box around objects in the scanner
