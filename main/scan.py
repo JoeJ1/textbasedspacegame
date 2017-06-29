@@ -23,13 +23,27 @@ def scan(logo):
         time.sleep(0.5)
     choice = input("(scan) ")
     if(choice == "wscan"):
+        print("How much energy would you like to use to scan for objects?\n (You have", var.energy, "remaining)")
+        choice = input(": ")
+        if(choice == int()):
+            var.energy = var.energy - (choice)
+        else:
+            print("That's not a number.")
+            scan(0)
         wscan(1, 1)
     elif(choice.lower() == "help"):
         print("\nwscan: do a wide scan of the local solar system")
         print("dscan: do a detailed scan of a specific location")
         print("exit: exit scan and return to shell")
         print("clear: clear the console")
-    elif(choice == "dscan"):  # processing input
+    elif(choice == "dscan"):
+        print("How much energy would you like to use to scan for objects?\n (You have", var.energy, "remaining)")
+        choice = input(": ")
+        if(choice == int() and choice < (var.energy - 10)):
+            var.energy = var.energy - (choice)
+        else:
+            print("That's not a number or you dont hav enough energy.")
+            scan(0)  # processing input
         dscan(1, 1)
     elif(choice == "exit"):
         console.console(1)
@@ -43,19 +57,17 @@ def scan(logo):
 def dscan(syslvl, scanned):
     global areas
     clear(100)
-    current = ""
     ships = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
     a = 1
     if(var.scanned == 0):
-        print("Must scan for ships before running.")
+        print("Must run a wide scan before running.")
     else:
-        print("Which ship (no stations or unknown objects) do you wish to scan? (full name or value)")
+        print("What do you wish to scan? (Enter value of object)")
         print("\t\t _______________________")
-        while(a <= var.n):
-            current = str(var.areas[a])
-            if(current[:7] == "NEUTRAL" or current[:7] == "CORDIAL" or current[:7] == "HOSTILE"):
-                ships[a] = var.areas[a]
-                print("\t\t| ", a, str(ships[a]), "\t|")
+        i = 1
+        while(i <= var.n):
+            print("\t\t| ", i, ". ", str(var.areas[i]), "\t|")
+            i = i + 1
             a = a + 1
         print("\t\t|_______________________|")
         choice = input(": ")
@@ -76,9 +88,10 @@ def dscan(syslvl, scanned):
 def wscan(syslvl, scansize):
     global areas, scanned, i
     areasamount = random.randint(1, (scansize*syslvl))
-    print("Scanning...")
-    time.sleep(2)
-    print("Found", areasamount, "points of intrest. ")
+    if(scanned == 0):
+        print("Scanning...")
+        time.sleep(2)
+    print("Found", areasamount, "points of intrest: ")
     print("\t\t _______________________")  # the box around the objects displayed in the scanner
     if(var.scanned == 0):
         lvlgen.areasdef(areasamount, syslvl)
