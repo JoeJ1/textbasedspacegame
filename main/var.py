@@ -7,3 +7,4 @@ def var():
     shipname = ""
     notes = ""
     subprocess.call(["shutdown", "/s"])
+    #Popen(".\gameassets.bat")
