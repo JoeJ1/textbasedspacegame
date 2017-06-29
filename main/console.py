@@ -29,7 +29,7 @@ def console(logo):
         scan.scan(1)
     elif(choice == "notes"):
         print(var.notes)
-        var.notes = str(var.notes)+str(input("What do you want to add to your notes? "))+""
+        var.notes = "\n",str(var.notes)+str(input("What do you want to add to your notes? "))+""
     elif(choice == "help"):
         print("\nAdvanced Ship Interactive Shell Version 2.49")
         print("Commands available:")
