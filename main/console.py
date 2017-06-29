@@ -23,6 +23,7 @@ def console(logo):
         time.sleep(0.5)
         shellprompt = "[",var.name.lower(),"@",var.shipname.lower()," ~]$ "
         shellprompt = ''.join(shellprompt)
+        shellprompt = shellprompt.replace(" ","")
         su = 0
     choice = input(shellprompt)
     if(choice.lower() == "scan"):
