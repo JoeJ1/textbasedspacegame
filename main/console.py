@@ -1,6 +1,7 @@
 import time
 import scan
 import var
+import ship
 
 
 def console(logo):
@@ -24,6 +25,7 @@ def console(logo):
         print("Commands available:")
         print("scan: scans the area around your ship.")
         print("clear: clear the console")
+        print("smcs: ship manual control system; allows you to pilot your ship or set autopilot")
     elif(choice == "su" and su == 0):
         choice = input("Password: ")
         if(choice == "doggos"):
@@ -45,6 +47,8 @@ def console(logo):
         clear(50)
         time.sleep(0.1)
         clear(50)
+    elif(choice == "smcs"):
+        ship.smcs()
     else:
         print("asish:", choice, ": command not found")
     console(0)

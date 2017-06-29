@@ -1,0 +1,2 @@
+def smcs():
+    print("wip")
