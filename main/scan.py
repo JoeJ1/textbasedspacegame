@@ -130,7 +130,7 @@ def wscan(syslvl, scansize):
     areasamount = random.randint(1, (scansize*syslvl))
     print("Scanning...")
     time.sleep(2)
-    print("Found", areasamount, "points of intrest")
+    print("Found", areasamount, "points of intrest. ")
     print("\t\t _______________________")  # the box around the objects displayed in the scanner
     if(var.scanned == 0):
         areasdef(areasamount, syslvl)
