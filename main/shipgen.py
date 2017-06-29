@@ -17,7 +17,7 @@ def ship(sizex,sizey):
     ship = shipgen(sizex,sizey)
     elementlen = len(ship[1])
     x = 0
-    y = 1
+    y = 0
     area = room(x,y,ship)
     print(ship)
     print(area)
