@@ -68,7 +68,7 @@ def dscan(syslvl, scanned):
 def wscan(syslvl, scansize):
     global areas, scanned, i
     areasamount = random.randint(1, (scansize*syslvl))
-    if(scanned == 0):
+    if(var.scanned == 0):
         print("Scanning...")
         time.sleep(2)
     print("Found", areasamount, "points of intrest: ")

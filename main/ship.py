@@ -1,6 +1,6 @@
 import var
 
-
+#jasdaskdj
 def smcs():
     print(""""
            _____ __  __  _____  _____
@@ -11,9 +11,9 @@ def smcs():
          |_____/|_|  |_|\_____|_____/
            Ship  Manual Control System
         """)
-    i = 0
     print("\t\t_______________________")
-    while(i <= len(var.areas)):
+    i = 0
+    while(i <= len(var.n)):
         print("\t\t|", i, ". ", var.areas[i], "\t|")
         i = i + 1
     print("\t\t|______________________|")
