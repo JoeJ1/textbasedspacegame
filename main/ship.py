@@ -1,5 +1,5 @@
 import var
-
+import shipboard.py
 
 def smcs():
     print(""""
@@ -38,7 +38,7 @@ def smcs():
                 choice = input(": ")
                 if(choice == "y"):
                     if(var.area[7] == "CORDIAL" or var.area[7] == "FRIENDLY" or var.area[7] == "NEUTRAL"):
-                        
+                        board.shipboard()
                 elif(choice == "n"):
                     print("Exiting to console...")
                     time.sleep(0.5)
