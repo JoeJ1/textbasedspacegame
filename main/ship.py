@@ -32,7 +32,7 @@ def smcs():
         print("Which object do you wish to travel to? (full name or value) type \"exit\", then \"list\" to see a list of scanned areas")
         choice = input(": ")
         if(choice.isdigit()):
-            if(choice <= var.n):
+            if(int(choice) <= var.n):
                 var.area = str(var.areas[int(choice)])
                 print("Do you wish to land at/dock with ",str(var.areas[int(choice)])),"? (y/n)")
                 choice = input(": ")
