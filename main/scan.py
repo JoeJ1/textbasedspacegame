@@ -23,13 +23,6 @@ def scan(logo):
         time.sleep(0.5)
     choice = input("(scan) ")
     if(choice == "wscan"):
-        print("How much energy would you like to use to scan for objects?\n (You have", var.energy, "remaining)")
-        choice = input(": ")
-        if(choice == int()):
-            var.energy = var.energy - (choice)
-        else:
-            print("That's not a number.")
-            scan(0)
         wscan(1, 1)
     elif(choice.lower() == "help"):
         print("\nwscan: do a wide scan of the local solar system")
@@ -41,10 +34,9 @@ def scan(logo):
         choice = input(": ")
         if(choice == int() and choice < (var.energy - 10)):
             var.energy = var.energy - (choice)
+            dscan(1, 1)
         else:
-            print("That's not a number or you dont hav enough energy.")
-            scan(0)  # processing input
-        dscan(1, 1)
+            print("That's not a number or you dont have enough energy.")
     elif(choice == "exit"):
         console.console(1)
     elif(choice == "clear"):
