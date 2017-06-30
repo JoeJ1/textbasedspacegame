@@ -31,7 +31,7 @@ def room(x, y, ship):
     if(x < len(ship[1])and y < len(ship)/len(ship[1])):
         ypos = ship[y]
         ypos = list(ypos)
-        pos = ypos[x]
+        pos = int(ypos[x])
         return(pos)
 
 
