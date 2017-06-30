@@ -7,3 +7,4 @@ def var():
     notes = ""
     n = 0
     energy = 100
+    area = ""
