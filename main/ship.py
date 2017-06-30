@@ -1,4 +1,6 @@
 import var
+
+
 def smcs():
     print(""""
            _____ __  __  _____  _____
@@ -11,7 +13,7 @@ def smcs():
         """)
     i = 0
     print("\t\t_______________________")
-    while(i<=len(var.areas)):
-        print("\t\t|",i,". ",var.areas[i],"\t|")
-        i = i +1
+    while(i <= len(var.areas)):
+        print("\t\t|", i, ". ", var.areas[i], "\t|")
+        i = i + 1
     print("\t\t|______________________|")
