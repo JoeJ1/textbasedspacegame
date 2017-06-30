@@ -1,5 +1,8 @@
 import var
-import shipboard.py
+import board
+import time
+import console
+
 
 def smcs():
     print(""""
@@ -34,7 +37,7 @@ def smcs():
         if(choice.isdigit()):
             if(int(choice) <= var.n):
                 var.area = str(var.areas[int(choice)])
-                print("Do you wish to land at/dock with ",str(var.areas[int(choice)])),"? (y/n)")
+                print("Do you wish to land at/dock with ", str(var.areas[int(choice)]), "? (y/n)")
                 choice = input(": ")
                 if(choice == "y"):
                     if(var.area[7] == "CORDIAL" or var.area[7] == "FRIENDLY" or var.area[7] == "NEUTRAL"):
@@ -42,7 +45,7 @@ def smcs():
                 elif(choice == "n"):
                     print("Exiting to console...")
                     time.sleep(0.5)
-                    console(0)
+                    console.console(0)
             else:
                 print("That isn't one of the areas in this solar system.")
         else:
