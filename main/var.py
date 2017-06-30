@@ -1,5 +1,5 @@
 def var():
-    global areas, scanned, notes, name, shipname, n, energy
+    global areas, scanned, notes, name, shipname, n, energy, area
     areas = ["", "", "", "", "", "", "", "", "", ""]
     scanned = 0
     name = ""
