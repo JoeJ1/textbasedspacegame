@@ -60,6 +60,17 @@ def shipboard():
         d = "\n"
     print("Options for movement are: ")
     print(a,option1,b,option2,c,option3,d,option4)
+    print("\n")
+    choice = input(": ")
+    if(choice == option1 or choice == option2 or choice == option3 or choice == option4):
+        if(choice.lower() == "right"):
+            x = x +1
+        elif(choice.lower() == "left"):
+            x = x -1
+        elif(choice.lower() == "up"):
+            y = y -1
+        elif(choice.lower() == "down"):
+            y = y +1
 
 def optionscheck(x,y,level):
     rightoption = False
