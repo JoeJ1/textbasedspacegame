@@ -1,6 +1,6 @@
 import var
 
-#jasdaskdj
+
 def smcs():
     print(""""
            _____ __  __  _____  _____
