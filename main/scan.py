@@ -30,7 +30,6 @@ def scan(logo):
         print("exit: exit scan and return to shell")
         print("clear: clear the console")
     elif(choice == "dscan"):
-
         dscan(1, 1)
     elif(choice == "exit"):
         console.console(1)
