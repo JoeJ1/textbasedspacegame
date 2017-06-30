@@ -30,13 +30,8 @@ def scan(logo):
         print("exit: exit scan and return to shell")
         print("clear: clear the console")
     elif(choice == "dscan"):
-        print("How much energy would you like to use to scan for objects?\n (You have", var.energy, "remaining)")
-        choice = input(": ")
-        if(choice == int() and choice < (var.energy - 10)):
-            var.energy = var.energy - (choice)
-            dscan(1, 1)
-        else:
-            print("That's not a number or you dont have enough energy.")
+
+        dscan(1, 1)
     elif(choice == "exit"):
         console.console(1)
     elif(choice == "clear"):
@@ -49,8 +44,13 @@ def scan(logo):
 def dscan(syslvl, scanned):
     global areas
     clear(100)
-    ships = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
-    a = 1
+    print("How much energy would you like to use to scan for objects?\n (You have", var.energy, "remaining)")
+    choice = input(": ")
+    if(choice == int() and choice < (var.energy - 10)):
+        var.energy = var.energy - (choice)
+        scandetail = choice
+    else:
+        print("That's not a number or you dont have enough energy.")
     if(var.scanned == 0):
         print("Must run a wide scan before running.")
     else:
@@ -60,21 +60,10 @@ def dscan(syslvl, scanned):
         while(i <= var.n):
             print("\t\t| ", i, ". ", str(var.areas[i]), "\t|")
             i = i + 1
-            a = a + 1
         print("\t\t|_______________________|")
         choice = input(": ")
-        if(str(choice) in ships):
-            print("Scanning...")
-            time.sleep(2)
-            print("Worked!")
-            # stuff here
-        elif(choice.isdigit()):
-            if(int(choice) < a):
-                print("Scanning...")
-                time.sleep(2)
-                print("Worked!")
-                print(str(ships[int(choice)]))
-                # stuff here
+        if(choice == scandetail):
+            print("wip")
 
 
 def wscan(syslvl, scansize):
