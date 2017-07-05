@@ -11,3 +11,4 @@ def var():
     areamap = [""]
     x = 0
     y = 0
+    objects = [""]
