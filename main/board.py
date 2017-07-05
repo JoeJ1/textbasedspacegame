@@ -1,18 +1,23 @@
 import var
 import lvlgen
 import random
+import map
 
-
-def shipboard():
+def shipboard(newgen = True):
     option1 = ""
     option2 = ""
     option3 = ""
     option4 = ""
-    if(var.area[7] == "NEUTRAL"):
-        level = lvlgen.shipgen(random.randint(5, 9), random.randint(6, 8))
+    if(newgen == True):
+        if(var.area[7] == "NEUTRAL"):
+            level = lvlgen.shipgen(random.randint(5, 9), random.randint(6, 8))
+            var.areamap = lvlgen.shipgen(random.randint(5, 9), random.randint(6, 8))
+        else:
+            level = lvlgen.shipgen(random.randint(3, 7), random.randint(4, 6))
+            var.areamap = lvlgen.shipgen(random.randint(3, 7), random.randint(4, 6))
+        options = optionscheck(0, 0, level)
     else:
-        level = lvlgen.shipgen(random.randint(3, 7), random.randint(4, 6))
-    options = optionscheck(0, 0, level)
+        level = var.areamap
     if(options[0] is True):
         if(option1 == ""):
             option1 = "right"
@@ -64,6 +69,7 @@ def shipboard():
     print("Options for movement are: ")
     print(a, option1, b, option2, c, option3, d, option4)
     print("\n")
+    map.mapgen(level)
     choice = input(": ")
     if(choice == option1 or choice == option2 or choice == option3 or choice == option4):
         if(choice.lower() == "right"):
@@ -74,6 +80,7 @@ def shipboard():
             var.y = var.y - 1
         elif(choice.lower() == "down"):
             var.y = var.y + 1
+
 
 
 def optionscheck(x, y, level):

@@ -8,5 +8,6 @@ def var():
     n = 0
     energy = 100
     area = ""
+    areamap = [""]
     x = 0
     y = 0

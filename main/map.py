@@ -25,6 +25,3 @@ def mapgen(ship):
 
         print(mapstr[i])
         i = i +1
-
-
-mapgen(lvlgen.shipgen(100,100))
