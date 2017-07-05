@@ -6,7 +6,13 @@ def shipgen(sizex, sizey):
     array = ["", ]*sizey*sizex
     i = 0
     while(i < len(array)):
-        array[i] = random.randint(0, 2)
+        randomint =random.randint(0,99)
+        if(randomint<50):
+            array[i] = 0
+        elif(randomint>=50 and randomint<90):
+            array[i] = random.randint(1,7)
+        elif(randomint>=90 and randomint<100):
+            array[i] = random.randint(8,9)
         i = i+1
     array[0] = 1
     string = ','.join(str(array))
