@@ -4,17 +4,7 @@ import random
 import map
 
 def shipboard(newgen = True):
-    if(newgen == True):
-        if(var.area[7] == "NEUTRAL"):
-            level = lvlgen.shipgen(random.randint(5, 9), random.randint(6, 8))
-            var.areamap = lvlgen.shipgen(random.randint(5, 9), random.randint(6, 8))
-        else:
-            level = lvlgen.shipgen(random.randint(3, 7), random.randint(4, 6))
-            var.areamap = lvlgen.shipgen(random.randint(3, 7), random.randint(4, 6))
-        options = optionscheck(0, 0, level)
-    else:
-        level = var.areamap
-
+    var.areatype = var.area[7]
 
 
 
