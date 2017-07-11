@@ -4,16 +4,17 @@ import time
 import console
 
 
-def smcs():
-    print(""""
-           _____ __  __  _____  _____
-          / ____|  \\/  |/ ____|/ ____|
-         | (___ | \\  / | |    | (___
-          \\___ \\| |\/| | |     \___ \\
-          ____) | |  | | |____ ____) |
-         |_____/|_|  |_|\\_____|_____/
-           Ship  Manual Control System
-        """)
+def smcs(logo=1):
+    if(logo == 1):
+        print("""
+               _____ __  __  _____  _____
+              / ____|  \\/  |/ ____|/ ____|
+             | (___ | \\  / | |    | (___
+              \\___ \\| |\/| | |     \___ \\
+              ____) | |  | | |____ ____) |
+             |_____/|_|  |_|\\_____|_____/
+               Ship  Manual Control System
+            """)
     print("Type \"help\" for a list of commands")  # smcs is a program which flies to areas in the solar system
     choice = input("(smcs) ")
     if(choice.lower() == "list"):
@@ -31,6 +32,7 @@ def smcs():
         print("\"list\": lists the known objects in the current star system. (returns error if scan has not been run)")
         print("\"sanic\": does a heckin good fly.")
         print("\"exit\": closes smcs and returns to the ship's console.")
+        smcs(0)
     elif(choice.lower() == "sanic"):
         print("Which object do you wish to travel to? (full name or value) type \"exit\", then \"list\" to see a list of scanned areas")
         choice = input(": ")
@@ -51,3 +53,4 @@ def smcs():
         else:
             if(choice in var.areas):
                 var.area = str(choice)
+    smcs(0)
