@@ -1,5 +1,5 @@
 def var():
-    global areas, scanned, notes, name, shipname, n, energy, area, x, y
+    global areas, scanned, notes, name, shipname, n, energy, area, x, y, areatype, objects, areamap
     areas = ["", "", "", "", "", "", "", "", "", ""]
     scanned = 0
     name = ""
@@ -14,6 +14,6 @@ def var():
     y = 0
     objects = [""]
 
-    
+
 def clear(amount):
     print("\n"*amount)

@@ -1,7 +1,7 @@
 import var
 import lvlgen
 import random
-import map
+import map  # TODO rename map please
 
 
 def shipboard(newgen=True):
@@ -26,6 +26,7 @@ def optionscheck(x, y, level):
 
 
 def parser(room, x, y):
+    global objects
     options = [""]
     i = 0
     diroptions = optionscheck(x, y, var.areamap)
