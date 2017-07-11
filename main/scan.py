@@ -44,25 +44,25 @@ def dscan(syslvl, scanned):
     global areas
     clear(100)
     print("How much energy would you like to use to scan for objects?\n (You have", var.energy, "remaining)")
-    choice = input(": ")
-    if(choice == int() and choice < (var.energy - 10)):
+    choice = int(input(": "))
+    if(choice < (var.energy - 10)):
         var.energy = var.energy - (choice)
         scandetail = choice
+        if(var.scanned == 0):
+            print("Must run a wide scan before running.")
+        else:
+            print("What do you wish to scan? (Enter value of object)")
+            print("\t\t _______________________")
+            i = 1
+            while(i <= var.n):
+                print("\t\t| ", i, ". ", str(var.areas[i]), "\t|")
+                i = i + 1
+            print("\t\t|_______________________|")
+            choice = input(": ")
+            if(choice == scandetail):
+                print("wip")
     else:
         print("That's not a number or you dont have enough energy.")
-    if(var.scanned == 0):
-        print("Must run a wide scan before running.")
-    else:
-        print("What do you wish to scan? (Enter value of object)")
-        print("\t\t _______________________")
-        i = 1
-        while(i <= var.n):
-            print("\t\t| ", i, ". ", str(var.areas[i]), "\t|")
-            i = i + 1
-        print("\t\t|_______________________|")
-        choice = input(": ")
-        if(choice == scandetail):
-            print("wip")
 
 
 def wscan(syslvl, scansize):

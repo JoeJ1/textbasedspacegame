@@ -51,7 +51,7 @@ def smcs(logo=1):
                 elif(choice == "n"):
                     print("Exiting to console...")
                     time.sleep(0.5)
-                    console.console(0)
+                    console.console(1)
             else:
                 print("That isn't one of the areas in this solar system.")
         else:
@@ -60,5 +60,5 @@ def smcs(logo=1):
     elif(choice == "clear"):
         clear(100)
     elif(choice == "exit"):
-        console()
+        console.console(1)
     smcs(0)
