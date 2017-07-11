@@ -13,6 +13,7 @@ def var():
     x = 0
     y = 0
     objects = [""]
+
+    
 def clear(amount):
     print("\n"*amount)
-atom
