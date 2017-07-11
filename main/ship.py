@@ -4,6 +4,10 @@ import time
 import console
 
 
+def clear(amount):
+    print("\n"*amount)
+
+
 def smcs(logo=1):
     if(logo == 1):
         print("""
@@ -53,4 +57,8 @@ def smcs(logo=1):
         else:
             if(choice in var.areas):
                 var.area = str(choice)
+    elif(choice == "clear"):
+        clear(100)
+    elif(choice == "exit"):
+        console()
     smcs(0)
