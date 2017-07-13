@@ -1,7 +1,7 @@
 import var
 import lvlgen
 import random
-import map  # TODO rename map please
+import Map  # TODO rename map please
 
 
 def shipboard(newgen=True):
