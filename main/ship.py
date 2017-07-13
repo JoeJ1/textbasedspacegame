@@ -34,10 +34,10 @@ def smcs(logo=1):
     elif(choice.lower() == "help"):
         print("Commands available: ")
         print("\"list\": lists the known objects in the current star system. (returns error if scan has not been run)")
-        print("\"sanic\": does a heckin good fly.")
+        print("\"flyto\": does a heckin good fly.")
         print("\"exit\": closes smcs and returns to the ship's console.")
         smcs(0)
-    elif(choice.lower() == "sanic"):
+    elif(choice.lower() == "flyto"):
         print("Which object do you wish to travel to? (full name or value) type \"exit\", then \"list\" to see a list of scanned areas")
         choice = input(": ")
         if(choice.isdigit()):
@@ -57,6 +57,21 @@ def smcs(logo=1):
         else:
             if(choice in var.areas):
                 var.area = str(choice)
+                var.area = str(var.areas[int(choice)])
+                print("Do you wish to land at/dock with ", str(var.areas[int(choice)]), "? (y/n)")
+                choice = input(": ")
+                if(choice == "y"):
+                    if(var.area[7] == "CORDIAL" or var.area[7] == "FRIENDLY" or var.area[7] == "NEUTRAL"):
+                        board.shipboard()
+                    elif(var.area[7] == "UNKNOWN"):
+                        board.unknownboard()
+                    elif(var.area[7] == "STATION"):
+                        board.stationboard()
+                    elif()
+                elif(choice == "n"):
+                    print("Exiting to console...")
+                    time.sleep(0.5)
+                    console.console(1)
     elif(choice == "clear"):
         clear(100)
     elif(choice == "exit"):
