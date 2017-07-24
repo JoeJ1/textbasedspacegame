@@ -1,6 +1,11 @@
-#This is me attempting to make a better way of randomly generating the levels but it doesn't work.
+#link: https://repl.it/J4D4/0
+#sorry for the incredibly poorly written code, I
+#wrote this in the notes app on my phone and
+#I didn't have wifi to look up syntax so it might
+#not even make sense.
+
 import random
-size = 5
+
 def listtostring(lst):
     lst=str(lst)
     lst=lst.replace("\"","")
@@ -11,29 +16,67 @@ def listtostring(lst):
     lst=lst.replace("[","")
     lst=lst.replace(" ","")
     return(lst)
-def diroptionsgen(area,x,y):
-    currentln = area[y]
-    options = ["right","left","up","down"]
-    if(x == len(currentln)):
-        options[0] = ""
-    if(x == 0):
-        options[1] = ""
-    if(y == len(listtostring(area))):
-        options[3] = ""
-    if(y == 0):
-        options[2] = ""
-    return(options)
+# def diroptionsgen():
+#     global x, y, area
+#     currentln = area[y]
+#     options = ["right","left","up","down"]
+#     if(x == len(currentln)):
+#         options.remove("right")
+#     else:
+#         if(currentln[x]+1 == "1"):
+#             options.remove("right")
+#     if(x == 0):
+#         options.remove("left")
+#     else:
+#         if(currentln[x]-1 == "1"):
+#             options.remove("left")
+#     if(y == len(listtostring(area))):
+#         options.remove("down")
+#     else:
+#         if(currentln[y]+1 == "1"):
+#             options.remove("down")
+#     if(y == 0):
+#         options.remove("up")
+#     else:
+#         if(currentln[y]-1 == "1"):
+#             options.remove("up")
+#     if(len(options) == 0):
+#         options.append(" ")
+#     return(options)
 
 def lvlgen(size,length):
+    global x, y, area
     area = ["0"*size]*size
-    x=0
+    x=1
     y=0
     i=0
     while(i<length):
-        diroptions = diroptionsgen(area,x,y)
-        direction = random.choice(diroptions)
         currentln = list(area[y])
-        currentln[x] = "1"
+        options = ["right","left","up","down"]
+        if(x == len(currentln)):
+            options.remove("right")
+        else:
+            if(currentln[x+1] == "1"):
+                options.remove("right")
+        if(x == 0):
+            options.remove("left")
+        else:
+            if(currentln[x-1] == "1"):
+                options.remove("left")
+        if(y == len(listtostring(area))):
+            options.remove("down")
+        else:
+            if(currentln[y+1] == "1"):
+                options.remove("down")
+        if(y == 0):
+            options.remove("up")
+        else:
+            if(currentln[y-1] == "1"):
+                options.remove("up")
+        if(len(options) == 0):
+            options.append(" ")
+        direction = options[random.randint(0,len(options)-1)]
+        print(direction)
         if(direction=="right"):
             x=x+1
             i=i+1
@@ -47,15 +90,19 @@ def lvlgen(size,length):
             y=y+1
             i=i+1
         elif(direction==""or direction==" "):
-            direction=random.choice(diroptions)
-        else:
-            currentln=listtostring(currentln)
-            area[y] = currentln
+            break
+        area[y] = listtostring(currentln)
+        i = i +1
+    currentln[x] = "1"
     currentln = list(area[0])
     currentln[0] = "1"
     area[0] = listtostring(currentln)
+    i = len(area[i])-1
+    while(area[i] == "0"*size):
+        del area[i]
+        i = i -1
     return(area)
-area = lvlgen(10,9)
+area = lvlgen(5,4)
 i=0
 while(i<len(area)):
     print(area[i])
