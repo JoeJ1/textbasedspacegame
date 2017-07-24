@@ -16,34 +16,6 @@ def listtostring(lst):
     lst=lst.replace("[","")
     lst=lst.replace(" ","")
     return(lst)
-# def diroptionsgen():
-#     global x, y, area
-#     currentln = area[y]
-#     options = ["right","left","up","down"]
-#     if(x == len(currentln)):
-#         options.remove("right")
-#     else:
-#         if(currentln[x]+1 == "1"):
-#             options.remove("right")
-#     if(x == 0):
-#         options.remove("left")
-#     else:
-#         if(currentln[x]-1 == "1"):
-#             options.remove("left")
-#     if(y == len(listtostring(area))):
-#         options.remove("down")
-#     else:
-#         if(currentln[y]+1 == "1"):
-#             options.remove("down")
-#     if(y == 0):
-#         options.remove("up")
-#     else:
-#         if(currentln[y]-1 == "1"):
-#             options.remove("up")
-#     if(len(options) == 0):
-#         options.append(" ")
-#     return(options)
-
 def lvlgen(size,length):
     global x, y, area
     area = ["0"*size]*size
