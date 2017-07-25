@@ -5,8 +5,7 @@ import ship
 
 
 def console(logo = 1): #The console, where the player can type commands to use the ship in different ways.
-    global shellprompt
-    print(var.su)
+    global shellprompt #globalising shellprompt
     if(logo == 1): #logo should be whether or not the console logo is displayed but currently is not in use.
         print("Type \"help\" to view a list of commands")
         var.su = 0 # defining su (super user) variable 0 = disabled; 1 = enabled
