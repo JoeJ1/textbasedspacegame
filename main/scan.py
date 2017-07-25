@@ -1,12 +1,8 @@
-import random
+import random #Importing random and time. Two external packages.
 import time
-import console
+import console #importing console, var and lvlgen.
 import var
 import lvlgen
-
-
-def clear(amount):
-    print("\n"*amount)
 
 
 def scan(logo):
@@ -34,7 +30,7 @@ def scan(logo):
     elif(choice == "exit"):
         console.console(1)
     elif(choice == "clear"):
-        clear(100)
+        var.clear(100)
     else:
         print("scan:", choice, ": command not found")
     scan(0)
@@ -42,7 +38,7 @@ def scan(logo):
 
 def dscan(syslvl, scanned):
     global areas
-    clear(100)
+    var.clear(100)
     print("How much energy would you like to use to scan for objects?\n (You have", var.energy, "remaining)")
     choice = int(input(": "))
     if(choice < (var.energy - 10)):

@@ -4,9 +4,6 @@ import time
 import console
 
 
-def clear(amount):
-    print("\n"*amount)
-
 
 def smcs(logo=1):
     if(logo == 1):
@@ -73,7 +70,7 @@ def smcs(logo=1):
                     time.sleep(0.5)
                     console.console(1)
     elif(choice == "clear"):
-        clear(100)
+        var.clear(100,3)
     elif(choice == "exit"):
         console.console(1)
     smcs(0)
