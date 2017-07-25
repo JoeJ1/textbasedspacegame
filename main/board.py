@@ -32,14 +32,14 @@ def parser(room, x, y):
     global objects
     options = [""]
     diroptions = optionscheck(x, y, var.areamap)
-        if(diroptions[0] is True):
-            options.append(random.choice(["There is a small steel door leading east.", "There is a large, hydraulic door to the east.", "To the east you see a small mechanical door.", "On your east you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
-        if(diroptions[1] is True):
-            options.append(random.choice(["There is a small steel door leading west.", "There is a large, hydraulic door to the west.", "To the west you see a small mechanical door.", "On your west you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
-        if(diroptions[2] is True):
-            options.append(random.choice(["There is a small dented steel door leading north.", "There is a large, hydraulic door to the north.", "To the north you see a small mechanical door.", "On your north you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
-        if(diroptions[3] is True):
-            options.append(random.choice(["There is a small steel door leading south.", "There is a large, hydraulic door to the south.", "To the south you see a large rusting door.", "On your south you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
+    if(diroptions[0] is True):
+        options.append(random.choice(["There is a small steel door leading east.", "There is a large, hydraulic door to the east.", "To the east you see a small mechanical door.", "On your east you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
+    if(diroptions[1] is True):
+        options.append(random.choice(["There is a small steel door leading west.", "There is a large, hydraulic door to the west.", "To the west you see a small mechanical door.", "On your west you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
+    if(diroptions[2] is True):
+        options.append(random.choice(["There is a small dented steel door leading north.", "There is a large, hydraulic door to the north.", "To the north you see a small mechanical door.", "On your north you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
+    if(diroptions[3] is True):
+        options.append(random.choice(["There is a small steel door leading south.", "There is a large, hydraulic door to the south.", "To the south you see a large rusting door.", "On your south you see an open door, You can't see what's in the next room, however, as it curves around a corner."]))
 
     var.objects = objectsgen(room)
     if("glass" in objects):

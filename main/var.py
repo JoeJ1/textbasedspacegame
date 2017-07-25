@@ -1,5 +1,7 @@
+import time
+import random
 def var():
-    global areas, scanned, notes, name, shipname, n, energy, area, x, y, areatype, objects, areamap
+    global areas, scanned, notes, name, shipname, n, energy, area, x, y, areatype, objects, areamap, shellprompt, su
     areas = ["", "", "", "", "", "", "", "", "", ""]
     scanned = 0
     name = ""
@@ -13,7 +15,8 @@ def var():
     x = 0
     y = 0
     objects = [""]
-
+    shellprompt = ""
+    su = 0
 
 def clear(amount, version = 0, speed = 0.1, chunksize =50): #Defining clear, a function which prints an amount of blank space.
     if(version == 0): #version 0, the default clear version, clears all lines at once.
