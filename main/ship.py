@@ -67,7 +67,7 @@ def smcs(logo=1):
                         board.unknownboard()
                     elif(var.area[7] == "STATION"):
                         board.stationboard()
-                    elif()
+                    #elif()
                 elif(choice == "n"):
                     print("Exiting to console...")
                     time.sleep(0.5)
