@@ -67,7 +67,7 @@ def wscan(syslvl, scansize):
     if(var.scanned == 0):
         print("Scanning...")
         time.sleep(2)
-    print("Found", areasamount, "points of intrest: ")
+    print("Found", areasamount, "point(s) of intrest: ")
     print("\t\t _______________________")  # the box around the objects displayed in the scanner
     if(var.scanned == 0):
         lvlgen.areasdef(areasamount, syslvl)
