@@ -4,6 +4,7 @@ import time
 import random
 import console
 
+
 def flyingflavourtext():
     var.clear(100)
     print("Ship in transport. Please wait...")
@@ -15,21 +16,22 @@ def flyingflavourtext():
     print("Ship in transport. Please wait...\nOrienting towards target...")
     time.sleep(1)
     i = 0
-    while(i<299792458):
+    while(i < 299792458):
         var.clear(100)
-        print("Ship in transport. Please wait...\nAccellorating towards target speed of 299 792 458 ms\u207b\u00b9...\nCurrent speed :",i,"ms\u207b\u00b9")
+        print("Ship in transport. Please wait...\nAccellorating towards target speed of 299 792 458 ms\u207b\u00b9...\nCurrent speed :", i, "ms\u207b\u00b9")
         i = i + 299792.45
         time.sleep(0.01)
-    j = random.randint(30000000000,9999999999999)
+    j = random.randint(30000000000, 9999999999999)
     i = j
-    while(i>0):
+    while(i > 0):
         var.clear(100)
-        print("Ship in transport. Please wait...\nDistance from target: ",i,"\nCurrent speed: ",random.choice(["299 792 458 ms\u207b\u00b9","299 792 457 ms\u207b\u00b9","299 792 456 ms\u207b\u00b9"]))
-        i = i -j/100
+        print("Ship in transport. Please wait...\nDistance from target: ", i, "\nCurrent speed: ", random.choice(["299 792 458 ms\u207b\u00b9", "299 792 457 ms\u207b\u00b9", "299 792 456 ms\u207b\u00b9"]))
+        i = i - j/100
         time.sleep(0.1)
     var.clear(100)
     print("Destination reached. Prepare to disembark.")
     time.sleep(1)
+
 
 def smcs(logo=1):
     if(logo == 1):
@@ -95,7 +97,7 @@ def smcs(logo=1):
                         board.unknownboard()
                     elif(var.area[7] == "STATION"):
                         board.stationboard()
-                    #elif()
+                    # elif()
                 elif(choice == "n"):
                     print("Exiting to console...")
                     time.sleep(0.5)
@@ -103,7 +105,7 @@ def smcs(logo=1):
             else:
                 print("That isn't one of the areas in this solar system.")
     elif(choice == "clear"):
-        var.clear(100,3)
+        var.clear(100, 3)
     elif(choice == "exit"):
         console.console(1)
     smcs(0)

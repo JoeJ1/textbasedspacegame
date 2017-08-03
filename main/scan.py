@@ -1,6 +1,6 @@
-import random #Importing random and time. Two external packages.
+import random  # Importing random and time. Two external packages.
 import time
-import console #importing console, var and lvlgen.
+import console  # importing console, var and lvlgen.
 import var
 import lvlgen
 

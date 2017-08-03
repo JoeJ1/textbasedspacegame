@@ -6,10 +6,15 @@ import Map  # TODO rename map please
 
 def shipboard(newgen=True):
     var.areatype = var.area[7]
-def unknownboard(newgen = True):
+
+
+def unknownboard(newgen=True):
     var.areatype = var.area[7]
-def stationboard(newgen = True):
+
+
+def stationboard(newgen=True):
     var.areatype = var.area[7]
+
 
 def optionscheck(x, y, level):
     rightoption = False
@@ -59,7 +64,7 @@ def parser(room, x, y):
         if("table" in objects):
             options.append(random.choice(["A small jar of units lies in the middle of the table.", "A small pile of units lies on the table."]))
         else:
-            options.append(random.choice(["Units lay strewn across the floor, though you are not sure how many.","You notice some units in the corner of the room, stacked in small piles. Whoever was previously here had certainly enjoyed gambling"]))
+            options.append(random.choice(["Units lay strewn across the floor, though you are not sure how many.", "You notice some units in the corner of the room, stacked in small piles. Whoever was previously here had certainly enjoyed gambling"]))
     if("wires" in objects):
         i = i + 1
         options.append(random.choice(["Wires lay strewn randomly across the floor", "Wires stick out of the wall, they don't look as though they've carried an current in years."]))
@@ -71,7 +76,7 @@ def objectsgen(room):
     elif(room == "friendly"):
         objectoptions = ["glass", "gun", "table", "chair", "unit 1", "unit 2", "unit 5", "unit 25", "unit 100", "wires"]  # put objects here to add them to the rooms
     elif(room == "hostile"):
-        objectoptions = ["glass", "gun", "table", "chair", "unit 1", "unit 2", "unit 5", "unit 25", "unit 100", "wires","enemy","enemy","enemy","enemy"]  # put objects here to add them to the rooms, I added enemy lots of times to increase the chance of an enemy.
+        objectoptions = ["glass", "gun", "table", "chair", "unit 1", "unit 2", "unit 5", "unit 25", "unit 100", "wires", "enemy", "enemy", "enemy", "enemy"]  # put objects here to add them to the rooms, I added enemy lots of times to increase the chance of an enemy.
     chosenobjects = [""]
     objectsamount = random.randint(0, 6)
     i = 0
