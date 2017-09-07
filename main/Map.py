@@ -2,7 +2,7 @@ import var
 import lvlgen
 
 
-def mapgen(ship):
+def mapgen(ship): #creates a visual version of the level so the user can more easily read it.
     mapstr = ship
     x = 0
     y = 0
