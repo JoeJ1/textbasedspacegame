@@ -32,6 +32,13 @@ def optionscheck(x, y, level):
     options = [rightoption, leftoption, upoption, downoption]
     return(options)
 
+# The general psuedocode for the parser:
+#   Get the random list of objects
+#   Use that to print flavour text based around those objects.
+#   Interperet the user's input to find out what they mean, e.g. pick up small gun must be interpreted to mean pickup(gun)
+#   Do this by first finding the command e.g. finding out that the player wants to pick up or attack or run etc.
+#   Then find the arguments to their command within whatever function there particular command calls.
+#   Use those arguments to find out what to execute.
 
 def parser(room, x, y):
     global objects
