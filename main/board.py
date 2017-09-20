@@ -78,12 +78,11 @@ def parser(room, x, y):
 
 
 def objectsgen(room):
-    if(room == "default"):
-        objectoptions = ["glass", "gun", "table", "chair", "unit 1", "unit 2", "unit 5", "unit 25", "unit 100", "wires"]  # put objects here to add them to the rooms
-    elif(room == "friendly"):
-        objectoptions = ["glass", "gun", "table", "chair", "unit 1", "unit 2", "unit 5", "unit 25", "unit 100", "wires"]  # put objects here to add them to the rooms
+    objectoptions = ["glass", "gun", "table", "chair", "unit 1", "unit 2", "unit 5", "unit 25", "unit 100", "wires"]  # put objects here to add them to the rooms
+    if(room == "friendly"):
+        objectoptions.append("ally")
     elif(room == "hostile"):
-        objectoptions = ["glass", "gun", "table", "chair", "unit 1", "unit 2", "unit 5", "unit 25", "unit 100", "wires", "enemy", "enemy", "enemy", "enemy"]  # put objects here to add them to the rooms, I added enemy lots of times to increase the chance of an enemy.
+        objectoptions.append("enemy")
     chosenobjects = [""]
     objectsamount = random.randint(0, 6)
     i = 0
