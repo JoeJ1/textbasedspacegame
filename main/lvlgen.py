@@ -13,6 +13,7 @@ def listtostring(lst):  # Converts a list into a string without the special char
     lst = lst.replace(" ", "")
     return(lst)
 
+
 def ship(size, length):
     ship = shipgen(size, length)
     x = 0

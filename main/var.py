@@ -3,7 +3,7 @@ import time
 
 
 def var():
-    global areas, scanned, notes, name, shipname, n, energy, area, x, y, areatype, objects, areamap, shellprompt, su
+    global areas, scanned, notes, name, shipname, n, energy, area, x, y, areatype, objects, areamap, shellprompt, su, WHITE, RED, GREEN, ORANGE, BLUE, PURPLE, folder
     areas = ["", "", "", "", "", "", "", "", "", ""]
     scanned = 0
     name = ""
@@ -19,6 +19,13 @@ def var():
     objects = [""]
     shellprompt = ""
     su = 0
+    folder = " ~"
+    WHITE = '\033[0m'
+    RED = '\033[31m'
+    GREEN = '\033[92m'
+    ORANGE = '\033[33m'
+    BLUE = '\033[34m'
+    PURPLE = '\033[35m'
 
 
 def clear(amount, version=0, speed=0.1, chunksize=50):  # Defining clear, a function which prints an amount of blank space.

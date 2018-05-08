@@ -1,7 +1,6 @@
 import var
 import lvlgen
 import random
-import Map  # TODO rename map please
 
 
 def shipboard(newgen=True):
@@ -39,6 +38,7 @@ def optionscheck(x, y, level):
 #   Do this by first finding the command e.g. finding out that the player wants to pick up or attack or run etc.
 #   Then find the arguments to their command within whatever function there particular command calls.
 #   Use those arguments to find out what to execute.
+
 
 def parser(room, x, y):
     global objects
