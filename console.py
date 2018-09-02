@@ -10,7 +10,7 @@ def console(logo=1):  # The console, where the player can type commands to use t
         print("Type \"help\" to view a list of commands")
         var.su = 0  # defining su (super user) variable 0 = disabled; 1 = enabled
         time.sleep(0.5)  # waiting...
-        var.shellprompt = var.GREEN, "[", var.name.lower().replace(" ", ""), "@", var.shipname.lower().replace(" ", ""), var.WHITE, var.folder, var.GREEN, "]$ ", var.WHITE  # defining shellprompt.
+        var.shellprompt = var.BOLD, var.GREEN, "[", var.name.lower().replace(" ", ""), "@", var.shipname.lower().replace(" ", ""), var.WHITE, var.BOLD, var.folder, var.GREEN, "]$ ", var.WHITE  # defining shellprompt.
         var.shellprompt = ''.join(var.shellprompt)  # fixing visual shellprompt issues
     choice = input(var.shellprompt)  # getting the user's input and storing it as choice
     if(choice.lower() == "scan"):  # calling the scan function within the scan file upon the user's input
